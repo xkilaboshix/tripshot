@@ -14,3 +14,14 @@
  *= require_self
  */
  @import "bootstrap";
+
+ // フッター最下部固定
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Hiragino Kaku Gothic ProN', YuGothic, 'Yu Gothic Medium', Meiryo, sans-serif;
+}
+footer {
+  margin-top: auto;
+}
