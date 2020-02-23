@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="header_footer">
     <header class = "header">
       <nav class="navbar navbar-expand navbar-light navbar-fixed-top", style="background-color: #E5FAF8;">
         <%= link_to "tripshot", root_path, class: "navbar-brand" %>
@@ -34,7 +34,7 @@
           </ul>
         <% else %>
           <span class="u h7 text strong">
-            ようこそ！ログインしてみんなの旅を見よう！
+            ログインしてみんなの旅を見よう！
           </span>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -46,8 +46,10 @@
           </ul>
         <% end %>
       </nav>
-    </header>    
-    <%= yield %>
+    </header>
+    <main>
+      <%= yield %>
+    </main>       
     <footer class="footer", style="background-color: #E5FAF8;">
       <div class="container text-right mt-3">
         <p>copyright©tripshot.all rights reserved.</p>

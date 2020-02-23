@@ -15,17 +15,35 @@
  */
  @import "bootstrap";
 
+ main{
+   background-image: url(water.jpeg);
+   /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+  
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+  
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+  
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+  
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: #464646;
+ }
 //  ヘッダー固定
 .header{
   position: sticky;
   top: 0;
 }
  // フッター最下部固定
-body{
+ .header_footer{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   font-family: 'Helvetica Neue', 'Helvetica', 'Hiragino Kaku Gothic ProN', YuGothic, 'Yu Gothic Medium', Meiryo, sans-serif;
+  
 }
 footer {
   margin-top: auto;
@@ -49,11 +67,36 @@ footer {
   background-color: #464646;
   height: 600px;
 }
+// トップページ
 .top-text{
   text-align: center;
-  margin-top: 100px;
+  padding-top: 80px;
+  padding-bottom: 200px;
 }
 .top-link{
   text-align: center;
-  margin-top: 200px;
+}
+h4.top-title{
+  font-size: 50px;
+  font-family: Impact,Charcoal;
+  background: url(wood.jpeg);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+p.top-introduction{
+  font-size: x-large;
+  font-family: Impact,Charcoal;
+}
+// マイページ背景画像とプロフィール画像
+.profile li{
+  position: relative;
+  list-style: none;
+}
+.profile p{
+  position: absolute;
+  top: 110px;
+  left: 225px;
+}
+.profile_image img{
+  border-radius: 50%;
 }
