@@ -1,7 +1,6 @@
 class ListsController < ApplicationController
   def new
     @list = List.new
-    @lists = List.all
   end
   def create
     @list = List.new(list_params)
@@ -13,7 +12,8 @@ class ListsController < ApplicationController
     end
   end
   def show
-    session[:list_id] = params[:id]
+    @list = List.find(params[:id])
+    @post = Post.new
   end
   def edit
     

@@ -1,14 +1,15 @@
 class PostsController < ApplicationController
   def index
-    
+    @posts = Post.all
   end
   def new
     @post = Post.new
   end
   def create
+    binding.pry
     @post = Post.new(post_params)
-    @post.list_id = session[:list_id]
     @post.save
+    redirect_to list_path(@post)
   end
   def show
     
@@ -25,6 +26,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:list_id, :image_id, :body)
+    params.require(:post).permit(:list_id, :image, :body)
   end
 end
