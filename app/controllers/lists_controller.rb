@@ -13,7 +13,7 @@ class ListsController < ApplicationController
     end
   end
   def show
-    
+    session[:list_id] = params[:id]
   end
   def edit
     
