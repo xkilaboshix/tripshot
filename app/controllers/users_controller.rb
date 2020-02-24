@@ -14,11 +14,15 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-  def withdrow
-    
+  def withdraw
+    @user = User.find(params[:id])
   end
   def switch
-    
+    @user = User.find(params[:id])
+    if @user.update(is_enabled: false)
+      sign_out current_user #URLを踏ませずにコントローラーから直接サインアウトの指示を出す（device公式)
+    end
+    redirect_to root_path
   end
 
   private

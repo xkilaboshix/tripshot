@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'homes#top'
   resources :users, only: [:show, :edit, :update]
-  get '/users/:id/withdrow' => 'users#withdrow', as: 'withdrow_user' #退会画面への遷移
-  patch '/users/:id/withdrow' => 'users#switch', as: 'withdrow_switch_user' #会員ステータスの切替
+  get '/users/:id/withdraw' => 'users#withdraw', as: 'withdraw_user' #退会画面への遷移
+  patch '/users/:id/withdraw' => 'users#switch', as: 'withdraw_switch_user' #会員ステータスの切替
   
   resources :lists, except: [:index]
   resources :posts

@@ -31,6 +31,7 @@
   
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: #464646;
+  height: 600px;
  }
 //  ヘッダー固定
 .header{
@@ -99,4 +100,11 @@ p.top-introduction{
 }
 .profile_image img{
   border-radius: 50%;
+}
+// 退会画面
+h1.red-border{
+  padding-top: 40px;
+}
+.withdraw-text{
+  padding-top: 60px;
 }

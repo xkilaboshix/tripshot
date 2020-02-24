@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  enum achievement: [:旅見習い, :旅好き, :旅マスター, :覇王]
+  enum achievement: [:旅見習い, :旅好き, :旅マスター, :果てなき冒険者]
   validates :name, presence: true
   
   # emailを保存する前に小文字に
