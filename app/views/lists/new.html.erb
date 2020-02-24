@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="d-flex justify-content-center list-text-box">
+    <%= form_with(model: @list, local: true) do |f| %>
+      <h2>旅行リスト作成ページ</h2>
+      <div class="form-group">
+        <%= f.label :旅行タイトル%>
+        <%= f.text_field :title, class: "form-control", placeholder: "1文字以上75文字以下" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :内容（任意項目）%>
+        <%= f.text_area :body, class: "form-control", placeholder: "任意項目です" %>
+      </div>
+      <div class="form-group">
+          <%= f.label :日程入力（任意項目）%>
+        <div class="d-flex flex-row">
+          <%= f.text_field :departure_date, class: 'form-control col-6', placeholder: "出発日 例）2020/01/01" %> 
+          <%= f.text_field :return_date, class: 'form-control col-6', placeholder: "帰宅日 例）2020/01/03" %>           
+        </div>
+        <div class="form-group">
+          <%= f.label :tag_list %>
+          <%= f.text_field :tag_list, value: @list.tag_list.join(','), class: "form-control", data: {role: "tagsinput"} %>
+        </div>
+      </div>    
+      <%= f.submit "リストを作成", class: "btn btn-outline-primary offset-4 mt-3" %> 
+    <% end %>
+  </div> 
+</div>

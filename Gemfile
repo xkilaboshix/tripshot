@@ -78,7 +78,7 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 
 # タグ機能
-gem 'acts-as-taggable-on'
+gem 'acts-as-taggable-on', '~> 6.0'
 
 # font-awesome　アイコン
 gem 'font-awesome-rails'
