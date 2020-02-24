@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  
+  enum achievement: [:旅見習い, :旅好き, :旅マスター, :覇王]
   validates :name, presence: true
   
   # emailを保存する前に小文字に
