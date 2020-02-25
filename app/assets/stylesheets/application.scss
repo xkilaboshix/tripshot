@@ -17,7 +17,7 @@
  @import "tagsinput";
 
  main{
-   background-image: image-url(water.jpeg);
+  background-image: image-url("water.jpeg");
    /* 画像を常に天地左右の中央に配置 */
   background-position: center center;
   
@@ -81,7 +81,7 @@ footer {
 h4.top-title{
   font-size: 50px;
   font-family: Impact,Charcoal;
-  background: image-url(wood.jpeg);
+  background: image-url("wood.jpeg");
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
