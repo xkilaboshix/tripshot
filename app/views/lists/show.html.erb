@@ -1,7 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      
+      <% @posts.each do |post|%>
+        <%= attachment_image_tag post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300'  %>
+      <% end %>
     </div>
     <div class="col-md-6 post-text-box">
       <%= form_with(model: @post, local: true) do |f| %>
@@ -15,7 +17,7 @@
           <%= f.text_area :body, class: "form-control", placeholder: "任意項目です" %>
         </div> 
         <%= f.hidden_field :list_id, :value => @list.id %>   
-        <%= f.submit "リストを作成", class: "btn btn-outline-primary offset-4 mt-3" %> 
+        <%= f.submit "投稿", class: "btn btn-outline-primary offset-4 mt-3 col-3" %> 
       <% end %>
     </div>
   </div>

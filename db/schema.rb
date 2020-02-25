@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_070936) do
+ActiveRecord::Schema.define(version: 2020_02_24_171556) do
 
   create_table "chats", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -58,7 +58,9 @@ ActiveRecord::Schema.define(version: 2020_02_24_070936) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
     t.index ["list_id"], name: "index_posts_on_list_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
