@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     @post.save
-    redirect_to list_path(@post)
+    redirect_to list_path(@post.list_id)
   end
   def show
     

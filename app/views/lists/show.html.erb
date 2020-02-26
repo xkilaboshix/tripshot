@@ -1,8 +1,10 @@
-<div class="container">
+<div class="container lists-show">
   <div class="row">
     <div class="col-md-6">
       <% @posts.each do |post|%>
-        <%= attachment_image_tag post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300'  %>
+        <div class="list-post">
+          <%= attachment_image_tag post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300'  %>
+        </div>
       <% end %>
     </div>
     <div class="col-md-6 post-text-box">
