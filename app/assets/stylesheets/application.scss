@@ -32,12 +32,18 @@
   
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: #464646;
-  height: 600px;
+  min-height: 656px;
+  height: auto;
+  width: 100%;
+  padding-top: 56px;
  }
 //  ヘッダー固定
-.header{
-  position: sticky;
+.z-index_header{
+  z-index: 9999;
+  position: -webkit-sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
 }
  // フッター最下部固定
  .header_footer{
@@ -49,6 +55,7 @@
 }
 footer {
   margin-top: auto;
+  width: 100%;
 }
 // top背景画像
 .top{
