@@ -101,6 +101,8 @@ h4.top-title{
   font-size: 50px;
   font-family: Impact,Charcoal;
   background: image-url('wood.jpeg');
+  // 背景が前景のテキストで切り取られる
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
