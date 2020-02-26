@@ -1,7 +1,11 @@
 <div class="container">
   <div class="d-flex justify-content-center">
-    <% @posts.each do |post| %>
-      <%= attachment_image_tag post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>
-    <% end %>
+    <div class="row">
+      <% @posts.each do |post| %>
+        <div class="col-6">
+          <%= attachment_image_tag post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>
+        </div>
+      <% end %>
+    </div>   
   </div>
 </div>
