@@ -15,6 +15,7 @@
  */
  @import "bootstrap";
  @import "tagsinput";
+ @import "font-awesome";
 
  main{
   background-image: image-url('water.jpeg');
@@ -57,6 +58,17 @@ footer {
   margin-top: auto;
   width: 100%;
 }
+
+// いいねの色、大きさ
+.fav {
+  color: red;
+  font-size: 40px;
+}
+
+.heart-count{
+  color: black;
+}
+
 // top背景画像
 .top{
   background-image: image-url('tripshot_top.jpeg');

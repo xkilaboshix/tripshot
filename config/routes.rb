@@ -6,10 +6,14 @@ Rails.application.routes.draw do
   get '/users/:id/withdraw' => 'users#withdraw', as: 'withdraw_user' #退会画面への遷移
   patch '/users/:id/withdraw' => 'users#switch', as: 'withdraw_switch_user' #会員ステータスの切替
   
+  resources :posts do
+    resources :favorites, only: [:index, :create, :destroy]
+    resources :post_comments, only: [:create, :destroy]
+  end
+  
   resources :lists, except: [:index]
   resources :posts, except: [:new]
-  resources :post_comments, only: [:create, :destroy]
-  resources :favorites, only: [:index, :create, :destroy]
+  
   resources :rooms, except: [:new, :edit, :update]
   resources :user_rooms, only: [:create]
   resources :relationships, only: [:index, :create, :destroy]

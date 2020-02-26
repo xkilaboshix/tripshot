@@ -1,18 +1,22 @@
 <div class="container">
   <div class="d-flex justify-content-around list-text-box">
     <div class="post-image">
-      <%= attachment_image_tag @post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>
-      <p class="post-body"><%= @post.body %></p>
+      <li>
+        <%= attachment_image_tag @post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>
+        <p class="post-body"><%= @post.body %></p>
+        <p class="fav_<%= @post.id %> like"> 
+          <%= render 'like', user: current_user, post: @post %>
+        </p>
+      </li>
     </div>
     <div class="post-comments">
       <h4>コメント</h4>
       <%= render 'comment', user: current_user, post: @post %>
       <div class="post_comment">
-        <%= form_with(model: @post_comment) do |f| %>
+        <%= form_with(model: [@post, @post_comment]) do |f| %>
         <div class="row">
           <div class="col-sm-12">
             <%= f.text_area :comment, rows:'5', class: "form-control comment_form",placeholder: "コメントをここに" %>
-            <%= f.hidden_field :post_id, :value => @post.id %>
           </div>
         </div>
         <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
