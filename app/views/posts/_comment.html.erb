@@ -1,0 +1,15 @@
+ <table class = "table comment">
+   <% post.post_comments.each do |post_comment| %>
+    <tr class="<%= post_comment.id %>">
+      <td>
+        <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60,fallback: "no_image.jpg", size:'60x60' %>
+      </td>
+      <td><%= post_comment.user.name %></td>
+      <td><%= post_comment.comment %></td>
+      <td><%= post_comment.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+      <% if user.id == post_comment.user.id %>
+      <td><%= link_to "Destroy", post_comment_path(post_comment), method: :delete, remote: true, class: "btn btn-danger" %></td>
+      <% end %>
+    </tr>
+  <% end %>
+</table>
