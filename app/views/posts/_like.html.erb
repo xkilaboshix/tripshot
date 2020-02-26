@@ -1,0 +1,11 @@
+<% if post.favorited_by?(user) %>
+  <%= link_to post_favorite_path(post_id: post.id ,id: post.favorites[0].id), class: "fav",method: :delete, remote: true do %>
+    <i class="fa fa-heart" id="fav-<%= post.id %>" aria-hidden="true"></i>
+    <i class="heart-count"><%= post.favorites.count %></i>
+  <% end %>
+<% else %>
+  <%= link_to post_favorites_path(post.id), class: "fav",method: :post, remote: true do %>
+    <i class="fa fa-heart-o" id="fav-<%= post.id %>" aria-hidden="true"></i>
+    <i class="heart-count"><%= post.favorites.count %></i>
+  <% end %>
+<% end %>
