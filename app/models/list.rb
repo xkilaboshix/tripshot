@@ -2,7 +2,7 @@ class List < ApplicationRecord
   validates :title, presence: true, length: { in: 1..75 }
   validate :departure_date_cannot_be_greater_than_return_date
   belongs_to :user
-  has_many :posts
+  has_many :posts, dependent: :destroy
   
   # タグ機能の記述
   acts_as_taggable
