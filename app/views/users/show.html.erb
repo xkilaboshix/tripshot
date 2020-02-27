@@ -4,10 +4,25 @@
     <div class="profile col-6">
       <li>
         <%= attachment_image_tag @user, :background_image, :fill, 570, 600,fallback: "no_image.jpg", size:'570x600' %>
-        <p class="profile_image"><%= attachment_image_tag @user, :profile_image, :fill, 120, 120,fallback: "no_image.jpg", size:'120x120'%></p>
+        <p class="profile_image">
+          <%= attachment_image_tag @user, :profile_image, :fill, 120, 120,fallback: "no_image.jpg", size:'120x120'%>
+        </p>
       </li>
     </div>
-    <div class="col-6">
+    <div class="col-6 ">
+      <div class="d-flex justify-content-around">
+        <h2>旅行リスト一覧</h2>
+        <p><%= link_to "リスト作成ページへ", new_list_path, class:"btn btn-success" %></p>
+      </div>
+      <% @lists.each do |list| %>
+        <%= link_to list_path(list), class:"list-link" do %>
+          <div class="d-flex justify-content-center list">
+            <p><%= list.title %></p>
+            <p>　　<%= list.departure_date %>〜</p>
+            <p><%= list.return_date %></p>
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

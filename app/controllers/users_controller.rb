@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @lists = List.where(user_id: @user.id)
   end
+
   def edit
     @user = User.find(params[:id])
   end
+
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
@@ -14,9 +17,11 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
   def withdraw
     @user = User.find(params[:id])
   end
+
   def switch
     @user = User.find(params[:id])
     if @user.update(is_enabled: false)

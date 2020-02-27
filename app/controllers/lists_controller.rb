@@ -14,7 +14,7 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @post = Post.new
-    @posts = Post.where(user_id: current_user.id)
+    @posts = Post.where(list_id: params[:id])
   end
   def edit
     @list = List.find(params[:id])
