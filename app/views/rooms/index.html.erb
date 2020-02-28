@@ -2,6 +2,8 @@
   <ul>
     <% @rooms.each do |room| %>
       <li><%= link_to room.name, user_rooms_path(room_id: room.id), method: :post, data: {"turbolinks" => false} %></li>
+      <li><%= link_to ”削除”, user_rooms_path(room_id: room.id), method: :post, data: {"turbolinks" => false} %></li>
+
     <% end %>
   </ul>
 </div>
