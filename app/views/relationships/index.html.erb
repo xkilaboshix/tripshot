@@ -1,27 +1,48 @@
 <div class="container">
-  <h2>Follow Users</h2>
-  <div class="d-flex justify-content-around">   
-    <table class ="table">
-      <thead>
-        <th>画像</th>
-        <th>名前</th>
-        <th>フォロー数</th>
-        <th>フォロワー数</th>
-        <th>フォローボタン</th>
-        <th>show</th>
-      </thead>
-      <% @followings.each do |user| %>
-      <tbody>
-        <tr>
-          <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60,fallback: "no_image.jpg", size:'60x60' %></td>
-          <td><%= user.name%></td>
-          <td><%= user.followings.count %></td>
-          <td><%= user.followers.count %></td>
-          <td><%= render partial: "users/follow_button", locals: { user: user } %></td>
-          <td><%= link_to "Show", user_path(user) %></td>
-        </tr>
-      </tbody>
-      <% end %>
-    </table>
+  <div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active" role="presentation">
+        <a aria-controls="tab_a" data-toggle="tab" href="#tab_a" role="tab">フォロー</a>
+      </li>
+      <li role="presentation">
+        <a aria-controls="tab_b" data-toggle="tab" href="#tab_b" role="tab">フォロワー</a>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab_a" role="tabpanel">
+        <h2>Follow Users</h2>
+        <div class="d-flex justify-content-around">
+          <table class="table">
+            <thead>
+              <th>画像</th>
+              <th>名前</th>
+              <th>フォロー数</th>
+              <th>フォロワー数</th>
+              <th>フォローボタン</th>
+              <th>show</th>
+            </thead>
+            <% @followings.each do |user| %>
+              <tbody>
+                <tr>
+                  <td>
+                    <%= attachment_image_tag user, :profile_image, :fill, 60, 60,fallback: "no_image.jpg", size:'60x60' %>
+                  </td>
+                  <td><%= user.name%></td>
+                  <td><%= user.followings.count %></td>
+                  <td><%= user.followers.count %></td>
+                  <td><%= render partial: "users/follow_button", locals: { user: user } %></td>
+                  <td><%= link_to "Show", user_path(user) %></td>
+                </tr>
+              </tbody>
+            <% end %>
+          </table>
+        </div>
+      </div>
+      <div class="tab-pane" id="tab_b" role="tabpanel">
+        <p>
+          タブBです
+        </p>
+      </div>
+    </div>
   </div>
 </div>
