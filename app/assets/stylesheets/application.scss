@@ -17,11 +17,14 @@
  @import "tagsinput";
  @import "font-awesome";
 
- html body{
-  height: 100vh;
- }
 
- main{
+ body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Hiragino Kaku Gothic ProN', YuGothic, 'Yu Gothic Medium', Meiryo, sans-serif; 
+}
+
+ main {
   background-image: image-url('water.jpeg');
    /* 画像を常に天地左右の中央に配置 */
   background-position: center center;
@@ -37,12 +40,12 @@
   
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: #464646;
-  height: 100%;
   width: 100%;
-  padding-top: 56px;
+  padding: 56px 0;
+  min-height: 100vh;
  }
 //  ヘッダー固定
-.z-index_header{
+.z-index_header {
   z-index: 9999;
   position: -webkit-sticky;
   position: fixed;
@@ -50,16 +53,13 @@
   width: 100%;
 }
  // フッター最下部固定
- .header_footer{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: 'Helvetica Neue', 'Helvetica', 'Hiragino Kaku Gothic ProN', YuGothic, 'Yu Gothic Medium', Meiryo, sans-serif;
-  
-}
+
 footer {
+  z-index: 9999;
+  position: fixed;
   margin-top: auto;
   width: 100%;
+  bottom: 0;
 }
 
 // いいねの色、大きさ
@@ -68,12 +68,12 @@ footer {
   font-size: 40px;
 }
 
-.heart-count{
+.heart-count {
   color: black;
 }
 
 // top背景画像
-.top{
+.top {
   background-image: image-url('tripshot_top.jpeg');
   /* 画像を常に天地左右の中央に配置 */
   background-position: center center;
@@ -89,19 +89,23 @@ footer {
   
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: #464646;
-  height: 100%;
+  min-height: 100vh;
   width: 100%;
 }
+
+.top-page-top {
+  min-height: calc(100vh - 112px);
+}
 // トップページ
-.top-text{
-  text-align: center;
+.top-text {
+  text-align: center; 
   padding-top: 80px;
   padding-bottom: 200px;
 }
-.top-link{
+.top-link {
   text-align: center;
 }
-h4.top-title{
+h4.top-title {
   font-size: 50px;
   font-family: Impact,Charcoal;
   background: image-url('wood.jpeg');
@@ -110,36 +114,50 @@ h4.top-title{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-p.top-introduction{
+p.top-introduction {
   font-size: x-large;
   font-family: Impact,Charcoal;
 }
 // マイページ背景画像とプロフィール画像
-.profile li{
+.profile li {
   position: relative;
   list-style: none;
 }
-.profile p{
+.profile p {
   position: absolute;
-  top: 110px;
-  left: 225px;
+  top: 15%;
+  left: calc(50% - 60px);
 }
-.profile_image img{
+
+.profile_image{
+  position: relative;
+}
+.follow_button{
+  position: absolute;
+  top: 3%;
+  left: 25%;
+}
+
+.background_image { 
+  max-width: 100%;
+}
+.profile_image img {
   border-radius: 50%;
 }
 // 退会画面
-h1.red-border{
+h1.red-border {
   padding-top: 40px;
 }
-.withdraw-text{
+.withdraw-text {
   padding-top: 60px;
 }
 
 // リンクのCSS
-a{
+a {
   text-decoration: none;
   color: black;
 }
-a:hover{
+a:hover {
   text-decoration: none;
 }
+

@@ -2,6 +2,9 @@
   <div class="d-flex justify-content-around list-text-box">
     <div class="post-image">
       <li>
+        <% if current_user.id == @post.user.id %>
+          <p><%= link_to "投稿編集", edit_post_path(@post), class: "btn btn-primary" %></p>
+        <% end %>
         <%= attachment_image_tag @post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>
         <p class="post-body"><%= @post.body %></p>
         <p class="fav_<%= @post.id %> like">
