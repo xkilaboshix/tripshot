@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :correct_user, except: [:index, :show]
+
   def index
     @posts = Post.all
     @favorite_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
@@ -33,5 +35,12 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:list_id, :image, :body)
+  end
+
+  def correct_user
+    post = Post.find(params[:id])
+    if current_user.id != post.user_id
+      redirect_to user_path(current_user)
+    end
   end
 end

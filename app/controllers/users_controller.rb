@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+before_action :correct_user, except: [:show]
+
   def show
     @user = User.find(params[:id])
     @lists = List.where(user_id: @user.id)
@@ -25,7 +27,7 @@ class UsersController < ApplicationController
   def switch
     @user = User.find(params[:id])
     if @user.update(is_enabled: false)
-      sign_out current_user #URLを踏ませずにコントローラーから直接サインアウトの指示を出す（device公式)
+      sign_out current_user 
     end
     redirect_to root_path
   end
@@ -34,4 +36,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:is_enabled, :name, :profile_image, :background_image, :introduction)
   end
+
+  def correct_user
+    user = User.find(params[:id])
+    if current_user.id != user.id
+      redirect_to user_path(current_user)
+    end
+  end
+
 end

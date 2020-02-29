@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+before_action :correct_user, only: [:create, :edit, :update, :destroy]
+
   def new
     @list = List.new
   end
@@ -37,4 +39,12 @@ class ListsController < ApplicationController
   def list_params
     params.require(:list).permit(:user_id, :title, :body, :departure_date, :return_date, :tag_list)
   end
+
+  def correct_user
+    list = List.find(params[:id])
+    if current_user.id != list.user_id
+      redirect_to user_path(current_user)
+    end
+  end
+
 end
