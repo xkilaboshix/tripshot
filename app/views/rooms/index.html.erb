@@ -1,20 +1,22 @@
-<div>
-  <ul>
-    <% @rooms.each do |room| %>
-      <li>
-        <%= link_to room.name, user_rooms_path(room_id: room.id), method: :post, data: {"turbolinks" => false} %>
-        <% if room.owner_id == current_user.id %>
-          <%= link_to "削除", room_path(room), method: :delete, class: "btn btn-danger" %>
-        <% end %>
-      </li>
+<div class="container d-flex flex-column justify-content-around">
+  <div class = "new-book">
+    <h2>Rooms</h2>
+    <%= form_for(@room) do |f| %>
+    <h4>Create room</h4>
+    <%= f.text_field :name, class:"col-xs-12" %>
+    <%= f.submit 'Create room', class:"col-xs-12" %>
     <% end %>
-  </ul>
-</div>
-<div class = "new-book">
-  <h2>Rooms</h2>
-  <%= form_for(@room) do |f| %>
-  <h4>Create room</h4>
-  <%= f.text_field :name, class:"col-xs-12" %>
-  <%= f.submit 'Create room', class:"col-xs-12" %>
-  <% end %>
+  </div>
+  <div>
+    <ul>
+      <% @rooms.each do |room| %>
+        <li>
+          <%= link_to room.name, user_rooms_path(room_id: room.id), method: :post, data: {"turbolinks" => false} %>
+          <% if room.owner_id == current_user.id %>
+            <%= link_to "削除", room_path(room), method: :delete, class: "btn btn-danger" %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
