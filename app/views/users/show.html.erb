@@ -14,7 +14,7 @@
           <%= @user.name %>　　
           <%= "旅行回数：" + @lists.count.to_s + "回" %>　　
           <%= render 'follow_button', user: @user %>
-          <%= link_to "フォロー一覧", relationships_path, class: "btn btn-success" %>
+          <%= link_to "フォロー一覧", relationships_path, class: "btn btn-success", data: {"turbolinks" => false} %>
         </div>
       </p>
     </li>
@@ -35,12 +35,3 @@
     <% end %>
   </div>
 </div>
-
-
-
-
-<ul>
-<li><a href="tab2.html#tab1">このリンクはTab1に飛びます。</a></li>
-<li><a href="tab2.html#tab2">このリンクはTab2に飛びます。</a></li>
-<li><a href="tab2.html#tab3">このリンクはTab3に飛びます。</a></li>
-</ul>
