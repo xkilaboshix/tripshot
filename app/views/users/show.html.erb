@@ -14,7 +14,8 @@
           <%= @user.name %>　　
           <%= "旅行：" + @lists.count.to_s + "回" %>　　
           <%= render 'follow_button', user: @user %>
-          <%= link_to "フォロー:#{@user.followings.count}　　フォロワー:#{@user.followers.count}", relationships_path, class: "btn btn-success", data: {"turbolinks" => false} %>
+          <%= link_to("フォロー:#{@user.followings.count}", relationships_path(anchor: "tab1"), class: "btn btn-success", data: {"turbolinks" => false}) %>　
+          <%= link_to("フォロワー:#{@user.followings.count}", relationships_path(anchor: "tab2"), class: "btn btn-success", data: {"turbolinks" => false}) %>
         </div>
       </p>
     </li>
