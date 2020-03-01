@@ -9,12 +9,12 @@
       <%= attachment_image_tag @user, :background_image, :fill, 570, 600,fallback: "no_image.jpg", size:'570x600',class: 'background_image' %>
       <p class="profile_image">
         <%= attachment_image_tag @user, :profile_image, :fill, 120, 120,fallback: "no_image.jpg", size:'120x120' %>
-        <div class="follow_button d-flex justify-content-between">
+        <div class="follow_button d-flex justify-content-start">
           <%= @user.achievement %>　　
           <%= @user.name %>　　
-          <%= "旅行回数：" + @lists.count.to_s + "回" %>　　
+          <%= "旅行：" + @lists.count.to_s + "回" %>　　
           <%= render 'follow_button', user: @user %>
-          <%= link_to "フォロー一覧", relationships_path, class: "btn btn-success", data: {"turbolinks" => false} %>
+          <%= link_to "フォロー:#{@user.followings.count}　　フォロワー:#{@user.followers.count}", relationships_path, class: "btn btn-success", data: {"turbolinks" => false} %>
         </div>
       </p>
     </li>
