@@ -3,8 +3,9 @@ class RelationshipsController < ApplicationController
   before_action :set_user, only: [:create, :destroy]
 
   def index
-    @followings = current_user.followings
-    @followers = current_user.followers
+    user = User.find(params[:user_id])
+    @followings = user.followings
+    @followers = user.followers
   end
 
   def create

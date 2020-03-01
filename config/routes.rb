@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   patch '/users/:id/withdraw' => 'users#switch', as: 'withdraw_switch_user' #会員ステータスの切替
   
   resources :posts do
-    resources :favorites, only: [:index, :create, :destroy]
+    resources :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
+  resources :favorites, only: [:index]
   
   resources :lists, except: [:index]
   resources :posts, except: [:new]
