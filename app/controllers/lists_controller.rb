@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-before_action :correct_user, only: [:create, :edit, :update, :destroy]
+before_action :correct_user, only: [:edit, :update, :destroy]
 
   def new
     @list = List.new

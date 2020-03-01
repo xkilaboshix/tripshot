@@ -10,7 +10,7 @@ class List < ApplicationRecord
 
   def departure_date_cannot_be_greater_than_return_date
     if departure_date.present? && return_date.present? && return_date < departure_date
-      errors.add("出発日を帰宅日より前に設定してください")
+      errors.add(:deaparture_date, "出発日を帰宅日より前に設定してください")
     end
   end
 end
