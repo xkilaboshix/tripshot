@@ -1,21 +1,27 @@
 <div class="container d-flex justify-content-between">
-  <% if flash[:success] %>
-    <script type="text/javascript">
-      alert('プロフィールを更新しました');
-    </script>
-  <% end %>
   <div class="profile col-6">
     <li>
       <%= attachment_image_tag @user, :background_image, :fill, 570, 600,fallback: "no_image.jpg", size:'570x600',class: 'background_image' %>
       <p class="profile_image">
         <%= attachment_image_tag @user, :profile_image, :fill, 120, 120,fallback: "no_image.jpg", size:'120x120' %>
         <div class="follow_button d-flex justify-content-start">
-          <%= @user.achievement %>　　
-          <%= @user.name %>　　
-          <%= "旅行：" + @lists.count.to_s + "回" %>　　
-          <%= render 'follow_button', user: @user %>
-          <%= link_to("フォロー:#{@user.followings.count}", relationships_path(anchor: "tab1"), class: "btn btn-success", data: {"turbolinks" => false}) %>　
-          <%= link_to("フォロワー:#{@user.followings.count}", relationships_path(anchor: "tab2"), class: "btn btn-success", data: {"turbolinks" => false}) %>
+          <%= @user.achievement %>　
+          <%= @user.name %>　
+          <%= "旅行：" + @lists.count.to_s + "回" %>　
+          <%= render 'follow_button', user: @user %>        
+        </div>
+        <div class="follow_link">
+          <%= link_to("フォロー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab1"), class: "btn-sm btn-dark", data: {"turbolinks" => false}) %>
+          <%= link_to("フォロワー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab2"), class: "btn-sm btn-dark", data: {"turbolinks" => false}) %>
+        </div>
+        <div class="fav_edit_link">
+          <%= link_to "お気に入り", favorites_path, class: "btn-sm btn-secondary" %>
+          <% if @user.id == current_user.id %>
+            <%= link_to "変更", edit_user_path(@user), class: "btn-sm btn-secondary" %>
+          <% end %>
+        </div>
+        <div class ="introduction">
+          <%= @user.introduction %>
         </div>
       </p>
     </li>

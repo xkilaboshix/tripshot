@@ -1,13 +1,13 @@
-<div class="container d-flex flex-column justify-content-around">
-  <div class = "new-book">
+<div class="container">
+  <div class = "room-form">
     <h2>Rooms</h2>
     <%= form_for(@room) do |f| %>
-    <h4>Create room</h4>
+    <h5>チャットルーム作成フォーム</h5>
     <%= f.text_field :name, class:"col-xs-12" %>
-    <%= f.submit 'Create room', class:"col-xs-12" %>
+    <%= f.submit '部屋を作る', class:"col-xs-12" %>
     <% end %>
   </div>
-  <div>
+  <div class="d-flex flex-column justify-content-around">
     <ul>
       <% @rooms.each do |room| %>
         <li>

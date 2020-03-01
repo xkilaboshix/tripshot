@@ -1,0 +1,13 @@
+<div class="container">
+  <% @favorites.each do |favorite| %>
+    <div class="fav-main">
+      <li>
+        <%= attachment_image_tag favorite.post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300'%>
+        <p class="fav_<%= favorite.post.id %> like">
+          <%= render 'posts/like', user: current_user, post: favorite.post %>
+        </p>
+      </li>
+    </div>
+  <% end %>
+</div>
+

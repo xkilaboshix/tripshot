@@ -118,7 +118,7 @@ p.top-introduction {
   font-size: x-large;
   font-family: Impact,Charcoal;
 }
-// マイページ背景画像とプロフィール画像
+// マイページ背景画像とプロフィール画像(users#show)
 .profile li {
   position: relative;
   list-style: none;
@@ -132,10 +132,34 @@ p.top-introduction {
 .profile_image{
   position: relative;
 }
+
 .follow_button{
   position: absolute;
   top: 3%;
-  left: 0;
+  left: 25%;
+}
+
+.follow_link {
+  position: absolute;
+  top: 40%;
+  left: 30%;
+}
+
+.fav_edit_link {
+  position: absolute;
+  top: 48%;
+  left: 30%;
+}
+
+.introduction {
+  position: absolute;
+  top: 55%;
+  left: 30%;
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+  background-color: white;
+  word-break: break-all;
 }
 
 
@@ -167,3 +191,4 @@ a:hover {
   padding: 0;
   margin: 0;
 }
+

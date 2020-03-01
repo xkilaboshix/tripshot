@@ -1,20 +1,34 @@
 <div class="container">
-  <div class="row">
-    <div class="col-6">
-      <h2>全ての投稿一覧</h2>
-      <% @posts.each do |post| %> 
-        <%= link_to post_path(post) do %> 
-          <%= attachment_image_tag post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>
-        <% end %>
-      <% end %>
-    </div>   
-    <div class="col-6">
+  <div class="d-flex justify-content-around">
+    <div>
       <h2>お気に入りランキング</h2>
       <% @favorite_ranks.each do |post| %>
-        <%= link_to post_path(post) do %> 
-          <%= attachment_image_tag post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>
-        <% end %>
+        <div class="post-image">
+          <li>
+            <%= link_to post_path(post) do %>
+              <%= attachment_image_tag post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>
+            <% end %>
+            <p class="fav_<%= post.id %> like">
+              <%= render 'posts/like', user: current_user, post: post %>
+            </p>
+          </li>
+        </div>
       <% end %>
     </div>
+    <div>
+      <h2>全ての投稿一覧</h2>
+      <% @posts.each do |post| %>
+        <div class="post-image">
+          <li>
+            <%= link_to post_path(post) do %>
+            <%= attachment_image_tag post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>
+            <% end %>
+            <p class="fav_<%= post.id %> like">
+              <%= render 'posts/like', user: current_user, post: post %>
+            </p>
+          </li>
+        </div>
+      <% end %>
+    </div>  
   </div>
 </div>
