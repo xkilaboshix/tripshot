@@ -1,16 +1,20 @@
 class PostsController < ApplicationController
-  before_action :correct_user, except: [:create, :index, :show]
-
+  before_action :correct_user, except: [:new, :create, :index, :show]
+  
+  def new
+    @post = Post.new
+  end
   def index
     @posts = Post.all
     @favorite_ranks = week_post_calculate[0..2]
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = Post.new(post_params)   
+    @post.list_id = params[:post][:list_id]
     @post.user_id = current_user.id
     @post.save
-    redirect_to list_path(@post.list_id)
+    redirect_to list_path(params[:post][:list_id])
   end
 
   def show

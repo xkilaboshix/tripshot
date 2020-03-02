@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index]
   
   resources :lists, except: [:index]
-  resources :posts, except: [:new]
+
   
   resources :rooms, except: [:new, :edit, :update]
   resources :user_rooms, only: [:create]

@@ -213,9 +213,10 @@ a:hover {
 }
 
 // post view関連のscss
-.post-image  {
+.post-image{
   position: relative;
   height:300px;
+  margin-bottom: 30px;
 }
 // いいねの位置を画像の中に
 .post-image p.like {
@@ -257,6 +258,12 @@ a:hover {
 .post-text-box{
   padding-top: 80px;
 }
+
 .list-post{
   margin: 20px 0;
+}
+
+.list-body {
+  background-color: #E5FAF8;
+  border-radius: 0.25rem;
 }

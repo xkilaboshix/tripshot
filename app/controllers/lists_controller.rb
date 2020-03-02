@@ -15,7 +15,6 @@ before_action :correct_user, only: [:edit, :update, :destroy]
   end
   def show
     @list = List.find(params[:id])
-    @post = Post.new
     @posts = Post.where(list_id: params[:id])
   end
   def edit
