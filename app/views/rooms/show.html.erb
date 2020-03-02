@@ -1,7 +1,7 @@
 <div class="container">
   <div id="chatroom" data-room_id="<%= @room.id %>">
   <div id="user_id" data-user_id="<%= current_user.id %>">
-  <div class="d-flex flex-column">
+  <div class="d-flex flex-column justify-content-center">
     <h1><%= @room.name %></h1>
     <form class="form-inline">
       <div class="form-group">
@@ -14,13 +14,11 @@
       <button id="button" class="btn btn-primary">送信</button>
     </form>
     <div id="messages">
-      <ul class="list-group">
-        <% @messages.each do |message| %>
-          <div class="message-content">
-            <%= render 'messages/message', message: message %>
-          </div>
-        <% end %>
-      </ul>
+      <% @messages.each do |message| %>
+        <div class="message-content">
+          <%= render 'messages/message', message: message %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
