@@ -1,7 +1,10 @@
 <div class="container lists-show">
   <div class="d-flex justify-content-around mt-5">
     <div class="list-content">
-      <%= link_to "新規投稿", new_post_path(list_id: @list), class:"btn btn-success mb-3" %>
+       <% if @list.user_id == current_user.id %>
+        <%= link_to "新規投稿", new_post_path(list_id: @list), class:"btn btn-success mb-3" %>
+        <%= link_to "リスト編集", edit_list_path(@list), class:"btn btn-success mb-3", data: {"turbolinks" => false} %>
+      <% end %>
       <div class="list_show">
         <%= link_to user_path(@list.user) do %>
           <%= attachment_image_tag @list.user, :profile_image, :fill, 60, 60, fallback:   "no_image.jpg", size:'60x60'%>

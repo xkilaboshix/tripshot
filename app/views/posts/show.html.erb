@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="post-edit">
-      <% if current_user.id == @post.user.id %>
-        <p><%= link_to "投稿編集", edit_post_path(@post), class: "btn btn-primary" %></p>
-      <% end %>
-    </div>
+  <div class="post-edit">
+    <% if current_user.id == @post.user.id %>
+      <p><%= link_to "投稿編集", edit_post_path(@post), class: "btn btn-primary" %></p>
+    <% end %>
+  </div>
   <div class="d-flex justify-content-around mt-2">
     <div class="post-content">
       <div class="list_show">
@@ -33,7 +33,7 @@
         <%= form_with(model: [@post, @post_comment]) do |f| %>
         <div class="row">
           <div class="col-sm-12">
-            <%= f.text_area :comment, rows:'5', class: "form-control comment_form",placeholder: "コメントをここに" %>
+            <%= f.text_area :comment, rows:'5', class: "form-control comment_form",placeholder: "コメントをここに", required: true %>
           </div>
         </div>
         <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>

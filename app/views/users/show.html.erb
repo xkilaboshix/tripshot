@@ -29,7 +29,7 @@
   <div class="col-6 ">
     <div class="d-flex justify-content-around">
       <h2>旅行リスト一覧</h2>
-      <p><%= link_to "リスト作成ページへ", new_list_path, class:"btn btn-success" %></p>
+      <p><%= link_to "リスト作成ページへ", new_list_path, class:"btn btn-success", data: {"turbolinks" => false} %></p>
     </div>
     <% @lists.each do |list| %>
       <%= link_to list_path(list), class:"list-link" do %>
