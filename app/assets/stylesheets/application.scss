@@ -267,3 +267,87 @@ a:hover {
   background-color: #E5FAF8;
   border-radius: 0.25rem;
 }
+
+
+
+// _messageデザイン
+.message-content {
+  padding: 0;
+  max-width: 450px;
+  margin: 0;
+  text-align: right;
+  font-size: 14px;
+
+}
+
+.yourcomment {
+  width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.yourcomment .profile-image_chat {
+  float: left;
+  margin-right: -50px;
+  width: 40px;
+}
+
+.yourcomment .profile-image_chat img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.yourcomment .chat-area {
+  width: 100%;
+  text-align: left;
+}
+.speak {
+  display: inline-block;
+  position: relative; 
+  margin: 0 0 0 50px;
+  padding: 10px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #edf1ee;
+}
+
+.speak:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px; 
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #edf1ee;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+.speak p {
+  margin: 0;
+  padding: 0;
+}
+
+.mycomment {
+  margin: 10px 0;
+}
+.mycomment p {
+  display: inline-block;
+  position: relative; 
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 15px;
+}
+
+.mycomment p:after {
+  content: "";
+  position: absolute;
+  top: 3px; 
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
