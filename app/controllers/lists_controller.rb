@@ -8,6 +8,9 @@ before_action :correct_user, only: [:edit, :update, :destroy]
     @list = List.new(list_params)
     @list.user = current_user
     if @list.save
+      user = User.find(current_user.id)
+      user.achievement = achievement_calcurate
+      user.save
       redirect_to user_path(current_user)
     else
       render :new
@@ -30,8 +33,12 @@ before_action :correct_user, only: [:edit, :update, :destroy]
   end
   def destroy
     @list = List.find(params[:id])
-    @list.destroy
-    redirect_to user_path(current_user) 
+    if @list.destroy
+      user = User.find(current_user.id)
+      user.achievement = achievement_calcurate
+      user.save
+      redirect_to user_path(current_user) 
+    end
   end
 
   private
@@ -44,6 +51,21 @@ before_action :correct_user, only: [:edit, :update, :destroy]
     if current_user.id != list.user_id
       redirect_to user_path(current_user)
     end
+  end
+  
+  # create,destroy時に称号変更
+  def achievement_calcurate
+    lists_count = List.where(user_id: current_user).count
+    if lists_count > 10
+      achievement = "果てなき冒険者"
+    elsif lists_count > 4
+      achievement = "旅マスター"
+    elsif lists_count > 2
+      achievement = "旅好き"
+    else
+      achievement = "旅見習い"
+    end
+    return achievement
   end
 
 end
