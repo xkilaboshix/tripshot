@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :correct_user, except: [:index, :show]
+  before_action :correct_user, except: [:create, :index, :show]
 
   def index
     @posts = Post.all
@@ -54,7 +54,7 @@ class PostsController < ApplicationController
     # 一週間のお気に入りランキングを計算
   def week_post_calculate
     today = Date.today
-    past_date = today - 6
+    past_date = today - 7
     
     # 全てのお気に入りランキングをとってくる
     favorite_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').pluck(:post_id))
