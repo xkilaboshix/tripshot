@@ -1,8 +1,10 @@
  <table class = "table comment">
    <% post.post_comments.each do |post_comment| %>
     <tr class="<%= post_comment.id %>">
-      <td>
-        <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60,fallback: "no_image.jpg", size:'60x60' %>
+      <td class="profile-image_comment">
+        <%= link_to user_path(post_comment.user) do %>
+          <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60,fallback:   "no_image.jpg", size:'60x60' %>
+        <% end %>
       </td>
       <td><%= post_comment.user.name %></td>
       <td><%= post_comment.comment %></td>

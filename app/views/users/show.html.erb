@@ -15,7 +15,7 @@
           <%= link_to("フォロワー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab2"), class: "btn-sm btn-dark", data: {"turbolinks" => false}) %>
         </div>
         <div class="fav_edit_link">
-          <%= link_to "お気に入り", favorites_path, class: "btn-sm btn-secondary" %>
+          <%= link_to "お気に入り", favorites_path(user_id: @user), class: "btn-sm btn-secondary" %>
           <% if @user.id == current_user.id %>
             <%= link_to "変更", edit_user_path(@user), class: "btn-sm btn-secondary" %>
           <% end %>

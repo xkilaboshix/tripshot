@@ -1,16 +1,28 @@
 <div class="container">
-  <div class="d-flex justify-content-around list-text-box">
-    <div class="post-image">
-      <li>
-        <% if current_user.id == @post.user.id %>
-          <p><%= link_to "投稿編集", edit_post_path(@post), class: "btn btn-primary" %></p>
+    <div class="post-edit">
+      <% if current_user.id == @post.user.id %>
+        <p><%= link_to "投稿編集", edit_post_path(@post), class: "btn btn-primary" %></p>
+      <% end %>
+    </div>
+  <div class="d-flex justify-content-around mt-5">
+    <div class="post-content">
+      <div class="list_show">
+        <%= link_to user_path(@post.user) do %>
+          <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, fallback:   "no_image.jpg", size:'60x60'%>
         <% end %>
-        <%= attachment_image_tag @post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>
-        <p class="post-body"><%= @post.body %></p>
-        <p class="fav_<%= @post.id %> like">
-          <%= render 'like', user: current_user, post: @post %>
-        </p>
-      </li>
+        <%= @post.list.title %>
+        <%= "　#{@post.list.departure_date}〜#{@post.list.return_date}" %>
+      </div>
+      <%= attachment_image_tag @post, :image, :fill, 400, 300, fallback: "no_image.jpg", size:'400x300' %>
+      <p class="post-body"><%= @post.body %></p>  
+      <div class="fav_<%= @post.id %> d-flex justify-content-between">
+        <div class="tag_ahow"> 
+          <% @post.list.tag_list.each do |tag| %>
+            <span class="badge badge-info"><%= tag %></span>
+          <% end %>
+        </div>
+        <%= render 'like', user: current_user, post: @post %>
+      </div>
     </div>
     <div class="post-comments">
       <h4>コメント</h4>

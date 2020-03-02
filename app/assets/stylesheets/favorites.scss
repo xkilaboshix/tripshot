@@ -2,18 +2,3 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.fav-main li {
-  position: relative;
-  list-style: none;
-  max-width: 400px;
-}
-
-.fav-main p.like{
-  position: absolute;
-  bottom: -15px;
-  right: 10px;
-}
-
-.fav-main{
-  margin: 20px 0;
-}

@@ -118,6 +118,26 @@ p.top-introduction {
   font-size: x-large;
   font-family: Impact,Charcoal;
 }
+
+// user view関連のscss
+.list{
+  background-color: #E5FAF8;
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+.list p{
+  margin: auto 0;
+  line-height:50px ;
+  font-size: 18px;
+}
+
+.btn-success {
+  height: 38px;
+}
+
+
 // マイページ背景画像とプロフィール画像(users#show)
 .profile li {
   position: relative;
@@ -192,3 +212,51 @@ a:hover {
   margin: 0;
 }
 
+// post view関連のscss
+.post-image  {
+  position: relative;
+  height:300px;
+}
+// いいねの位置を画像の中に
+.post-image p.like {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+}
+
+.profile-image img{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  border-radius: 50%;
+}
+
+.tag {
+  position: absolute;
+  bottom: 0;
+  left: 5%
+}
+
+// コメントのプロフィール画像
+.profile-image_comment img { 
+  border-radius: 50%;
+}
+
+.list_show {
+  border-radius: 0.25rem;
+  background-color: #E5FAF8;
+  margin-bottom: 30px;
+}
+.list_show img {
+  border-radius: 50%;
+}
+
+// list view関連のscss
+// 旅行リスト作成ページのフォーム
+
+.post-text-box{
+  padding-top: 80px;
+}
+.list-post{
+  margin: 20px 0;
+}
