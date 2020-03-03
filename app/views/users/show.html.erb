@@ -33,10 +33,18 @@
     </div>
     <ul class="list-group list-group" style="max-width: 400px;">
       <% @lists.each do |list| %>
-        <%= link_to list_path(list) do %>
-          <li class="list-group-item list-group-item-primary">
-            <%= list.title %><br>出発日：<%= list.departure_date %>　帰宅日：<%= list.return_date %>
-          </li>
+        <% if list.departure_date && list.return_date %>
+          <%= link_to list_path(list) do %>
+            <li class="list-group-item list-group-item-primary">
+              <%= list.title %><br>出発日：<%= list.departure_date %>　帰宅日：<%= list.return_date %>
+            </li>
+          <% end %>
+        <% else %>
+          <%= link_to list_path(list) do %>
+            <li class="list-group-item list-group-item-primary">
+              <%= list.title %>
+            </li>
+          <% end %>
         <% end %>
       <% end %>
     </ul>

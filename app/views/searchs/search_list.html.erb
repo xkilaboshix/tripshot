@@ -4,10 +4,17 @@
     <ul class="list-group list-group" style="max-width: 400px;">
       <% @lists.each do |list| %>
         <%= link_to list_path(list) do %>
-          <li class="list-group-item list-group-item-primary">
-            <%= attachment_image_tag list.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
-            <%= list.title %>　出発日：<%= list.departure_date %><br>　　　　　　　帰宅日：<%= list.return_date %>
-          </li>
+          <% if list.departure_date && list.return_date %>
+            <li class="list-group-item list-group-item-primary">
+              <%= attachment_image_tag list.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
+              <%= list.title %>　出発日：<%= list.departure_date %><br>　　　　　　　帰宅日：<%= list.return_date %>
+            </li>
+          <% else %>
+            <li class="list-group-item list-group-item-primary">
+              <%= attachment_image_tag list.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
+              <%= list.title %>
+            </li>
+          <% end %>
         <% end %>
       <% end %>
     </ul>
