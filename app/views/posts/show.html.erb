@@ -10,8 +10,10 @@
         <%= link_to user_path(@post.user) do %>
           <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, fallback:   "no_image.jpg", size:'60x60'%>
         <% end %>
-        <%= @post.list.title %>
-        <%= "　#{@post.list.departure_date}〜#{@post.list.return_date}" %>
+          <%= link_to list_path(@post.list_id) do %>
+          <%= @post.list.title %>
+          <%= "　#{@post.list.departure_date}〜#{@post.list.return_date}" %>
+        <% end %>
       </div>
       <%= attachment_image_tag @post, :image, :fill, 400, 300, fallback: "no_image.jpg", size:'400x300' %>
       <p class="post-body"><%= @post.body %></p>  
