@@ -31,6 +31,13 @@
             <li class="nav-item">
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
             </li>
+            <li class = "nav-item">
+              <%= form_tag(search_path,:method => 'get') do %>
+                <%= text_field_tag :search %>
+                <%= select_tag :select, options_for_select([["ユーザー","ユーザー"],["リスト名","リスト名"],["リストのタグ","リストのタグ"]]) %>
+                <%= submit_tag 'Search' %>
+              <% end %>
+            </li>
           </ul>
         <% else %>
           <span class="u h7 text strong">
