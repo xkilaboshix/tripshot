@@ -1,25 +1,32 @@
-# README
+# tripshot README
+=========================================================================================================================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+・このサイトでは、旅行リストを作成し、日記をつけたり、画像を投稿したり、チャットで交流したり、他のユーザーの旅を見ることができます。
 
-Things you may want to cover:
+<img width="1013" alt="mypage" src="https://user-images.githubusercontent.com/58620845/75749419-1a260200-5d65-11ea-9ada-6c5ccc5070d5.png">
 
-* Ruby version
+## 使用言語、ライブラリ
+・Rails 5.24
+・Ruby 2.5.7
+・bootstrap4.1.1
+・jquery-rails
+・acts-as-taggable-on
+・font-awesome
 
-* System dependencies
+## 使用方法
+・まず、サインアップを行います。プロフィールを編集し、マイページの背景とプロフィール画像、自己紹介を設定しましょう。
+・投稿を行う場合、はじめに旅行のリストを作成する必要があります。タイトル以外は任意項目となっているので、リストを作成したら、投稿をしてみましょう！
+・チャットを利用する場合は、まずチャットルームを作るか、好きなお題の部屋に入りましょう。あとはメッセージを入力するだけです。
 
-* Configuration
+## 主な機能
+・ActionCable（リアルタイムチャット機能）
+・非同期通信（お気に入り、コメント投稿、削除）
+・一週間の間に投稿されたものの中のお気に入りランキング
+・リストの数によって称号を付与
+・フォロー、フォロワー機能
+・遷移先のタブを選択した状態でページ遷移
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
-# tripshot
