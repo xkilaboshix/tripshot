@@ -1,53 +1,55 @@
-<div class="container d-flex justify-content-between">
-  <div class="profile col-6">
-    <li>
-      <%= attachment_image_tag @user, :background_image, :fill, 570, 600,fallback: "no_image.jpg", size:'570x600',class: 'background_image' %>
-      <p class="profile_image">
-        <%= attachment_image_tag @user, :profile_image, :fill, 120, 120,fallback: "no_image.jpg", size:'120x120' %>
-        <div class="follow_button d-flex justify-content-start">
-          <%= @user.achievement %>　
-          <%= @user.name %>　
-          <%= "旅行：" + @lists.count.to_s + "回" %>　
-          <%= render 'follow_button', user: @user %>        
-        </div>
-        <div class="follow_link">
-          <%= link_to("フォロー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab1"), class: "btn-sm btn-dark") %>
-          <%= link_to("フォロワー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab2"), class: "btn-sm btn-dark") %>
-        </div>
-        <div class="fav_edit_link">
-          <%= link_to "お気に入り", favorites_path(user_id: @user), class: "btn-sm btn-secondary" %>
-          <% if @user.id == current_user.id %>
-            <%= link_to "変更", edit_user_path(@user), class: "btn-sm btn-secondary" %>
-          <% end %>
-        </div>
-        <div class ="introduction">
-          <%= @user.introduction %>
-        </div>
-      </p>
-    </li>
-  </div>
-  <div class="col-6 ">
-    <div class="d-flex justify-content-around">
-      <h2>旅行リスト一覧</h2>
-      <p><%= link_to "リスト作成ページへ", new_list_path, class:"btn btn-success" %></p>
+<div class="container">
+  <div class="row">
+    <div class="profile col-md-6">
+      <li>
+        <%= attachment_image_tag @user, :background_image, :fill, 570, 600,fallback: "no_image.jpg", size:'570x600',class: 'background_image' %>
+        <p class="profile_image">
+          <%= attachment_image_tag @user, :profile_image, :fill, 120, 120,fallback: "no_image.jpg", size:'120x120' %>
+          <div class="follow_button d-flex justify-content-start">
+            <%= @user.achievement %>　
+            <%= @user.name %>　
+            <%= "旅行：" + @lists.count.to_s + "回" %>　
+            <%= render 'follow_button', user: @user %>        
+          </div>
+          <div class="follow_link">
+            <%= link_to("フォロー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab1"), class: "btn-sm btn-dark") %>
+            <%= link_to("フォロワー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab2"), class: "btn-sm btn-dark") %>
+          </div>
+          <div class="fav_edit_link">
+            <%= link_to "お気に入り", favorites_path(user_id: @user), class: "btn-sm btn-secondary" %>
+            <% if @user.id == current_user.id %>
+              <%= link_to "変更", edit_user_path(@user), class: "btn-sm btn-secondary" %>
+            <% end %>
+          </div>
+          <div class ="introduction">
+            <%= @user.introduction %>
+          </div>
+        </p>
+      </li>
     </div>
-    <ul class="list-group list-group" style="max-width: 400px;">
-      <% @lists.each do |list| %>
-        <% if list.departure_date && list.return_date %>
-          <%= link_to list_path(list) do %>
-            <li class="list-group-item list-group-item-primary">
-              <%= list.title %><br>出発日：<%= list.departure_date %>　帰宅日：<%= list.return_date %>
-            </li>
-          <% end %>
-        <% else %>
-          <%= link_to list_path(list) do %>
-            <li class="list-group-item list-group-item-primary">
-              <%= list.title %>
-            </li>
+    <div class="col-md-6">
+      <div class="d-flex justify-content-around">
+        <h2>旅行リスト一覧</h2>
+        <p><%= link_to "リスト作成ページへ", new_list_path, class:"btn btn-success" %></p>
+      </div>
+      <ul class="list-group list-group" style="max-width: 400px;">
+        <% @lists.each do |list| %>
+          <% if list.departure_date && list.return_date %>
+            <%= link_to list_path(list) do %>
+              <li class="list-group-item list-group-item-primary">
+                <%= list.title %><br>出発日：<%= list.departure_date %>　帰宅日：<%= list.return_date %>
+              </li>
+            <% end %>
+          <% else %>
+            <%= link_to list_path(list) do %>
+              <li class="list-group-item list-group-item-primary">
+                <%= list.title %>
+              </li>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
 </div>
 

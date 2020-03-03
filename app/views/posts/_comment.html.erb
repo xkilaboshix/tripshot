@@ -1,17 +1,19 @@
- <table class = "table comment">
-   <% post.post_comments.each do |post_comment| %>
-    <tr class="<%= post_comment.id %>">
-      <td class="profile-image_comment">
-        <%= link_to user_path(post_comment.user) do %>
-          <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60,fallback:   "no_image.jpg", size:'60x60' %>
+
+   <table class = "table comment">
+     <% post.post_comments.each do |post_comment| %>
+      <tr class="<%= post_comment.id %>">
+        <td class="profile-image_comment">
+          <%= link_to user_path(post_comment.user) do %>
+            <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60,fallback:   "no_image.jpg", size:'60x60' %>
+          <% end %>
+          <br>　<%= post_comment.user.name %>
+        </td>
+        
+        <td><%= post_comment.comment %></td>
+        <td><%= post_comment.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+        <% if user.id == post_comment.user.id %>
+        <td><%= link_to "Destroy", post_post_comment_path(post_id: post.id, id: post_comment.id), method: :delete, remote: true, class: "btn btn-danger", data: { confirm: '削除しますか？' } %></td>
         <% end %>
-      </td>
-      <td><%= post_comment.user.name %></td>
-      <td><%= post_comment.comment %></td>
-      <td><%= post_comment.created_at.strftime('%Y/%m/%d %H:%M') %></td>
-      <% if user.id == post_comment.user.id %>
-      <td><%= link_to "Destroy", post_post_comment_path(post_id: post.id, id: post_comment.id), method: :delete, remote: true, class: "btn btn-danger", data: { confirm: '削除しますか？' } %></td>
-      <% end %>
-    </tr>
-  <% end %>
-</table>
+      </tr>
+    <% end %>
+  </table>

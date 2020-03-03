@@ -216,6 +216,7 @@ a:hover {
 .post-image{
   position: relative;
   height:300px;
+  max-width: 400px;
   margin-bottom: 30px;
 }
 // いいねの位置を画像の中に
@@ -225,18 +226,42 @@ a:hover {
   right: 10px;
 }
 
-.profile-image img{
-  position: absolute;
-  top: 5%;
-  left: 5%;
-  border-radius: 50%;
+.post-image img {
+  width: 100%;
 }
+
+
 
 .tag {
   position: absolute;
   bottom: 0;
   left: 5%
 }
+
+.post-content {
+  max-width: 400px;
+}
+
+.post-comments {
+  min-width: 350px;
+}
+
+.list-content {
+  width: 400px;
+}
+// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+.image img {
+  width: 100%;
+}
+
+.profile-image img{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  border-radius: 50%;
+  width: 17%;
+}
+
 
 // コメントのプロフィール画像
 .profile-image_comment img { 
@@ -247,10 +272,13 @@ a:hover {
   border-radius: 0.25rem;
   background-color: #E5FAF8;
   margin-bottom: 30px;
+  max-width: 400px;
 }
 .list_show img {
   border-radius: 50%;
 }
+
+
 
 // list view関連のscss
 // 旅行リスト作成ページのフォーム
@@ -266,6 +294,7 @@ a:hover {
 .list-body {
   background-color: #E5FAF8;
   border-radius: 0.25rem;
+  max-width: 400px;
 }
 
 

@@ -4,19 +4,33 @@
       <p><%= link_to "投稿編集", edit_post_path(@post), class: "btn btn-primary" %></p>
     <% end %>
   </div>
-  <div class="d-flex justify-content-around mt-2">
-    <div class="post-content">
+  <div class="row">
+    <div class="post-content col-md-6">
       <div class="list_show">
-        <%= link_to user_path(@post.user) do %>
-          <%= attachment_image_tag @post.user, :profile_image, :fill, 60, 60, fallback:   "no_image.jpg", size:'60x60'%>
-        <% end %>
-          <%= link_to list_path(@post.list_id) do %>
-          <%= @post.list.title %>
-          <%= "　#{@post.list.departure_date}〜#{@post.list.return_date}" %>
-        <% end %>
+        <ul class="list-group list-group" style="max-width: 400px;">
+          <% if @post.list.departure_date && @post.list.return_date %>
+            <li class="list-group-item list-group-item-primary">
+              <%= link_to user_path(@post.user) do %>
+                <%= attachment_image_tag @post.list.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
+              <% end %>
+              <%= @post.list.title %>　
+            </li>
+            <li class="list-group-item list-group-item-primary">
+              <%= link_to list_path(@post.list) do %>
+                出発日：<%= @post.list.departure_date %>　帰宅日：<%= @post.list.return_date %>
+              <% end %>
+            </li>
+            
+          <% else %>
+            <li class="list-group-item list-group-item-primary">
+              <%= attachment_image_tag @post.list.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
+              <%= @post.list.title %>
+            </li>
+          <% end %>
+        </ul>
       </div>
-      <%= attachment_image_tag @post, :image, :fill, 400, 300, fallback: "no_image.jpg", size:'400x300' %>
-      <p class="post-body"><%= @post.body %></p>  
+<%# aaaaaaaaaaaaaaaaaaaa %>
+      <div class="image"><%= attachment_image_tag @post, :image, :fill, 400, 300, fallback: "no_image.jpg", size:'400x300' %></div>
       <div class="d-flex justify-content-between">
         <div class="tag_show"> 
           <% @post.list.tag_list.each do |tag| %>
@@ -27,8 +41,9 @@
           <%= render 'like', user: current_user, post: @post %>
         </div>
       </div>
+      <p class="post-body"><%= @post.body %></p>
     </div>
-    <div class="post-comments">
+    <div class="post-comments col-md-6">
       <h4>コメント</h4>
       <%= render 'comment', user: current_user, post: @post %>
       <div class="post_comment">

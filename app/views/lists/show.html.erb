@@ -1,6 +1,6 @@
 <div class="container lists-show">
-  <div class="d-flex justify-content-around mt-5">
-    <div class="list-content">
+  <div class="row">
+    <div class="comment col-md-6">
        <% if @list.user_id == current_user.id %>
         <%= link_to "新規投稿", new_post_path(list_id: @list), class:"btn btn-success mb-3" %>
         <%= link_to "リスト編集", edit_list_path(@list), class:"btn btn-success mb-3" %>
@@ -9,8 +9,13 @@
         <ul class="list-group list-group" style="max-width: 400px;">
           <% if @list.departure_date && @list.return_date %>
             <li class="list-group-item list-group-item-primary">
-              <%= attachment_image_tag @list.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
-              <%= @list.title %>　出発日：<%= @list.departure_date %><br>　　　　　　　帰宅日：<%= @list.return_date %>
+              <%= link_to user_path(@list.user) do %>
+                <%= attachment_image_tag @list.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
+              <% end %>
+              <%= @list.title %>　
+            <li class="list-group-item list-group-item-primary">
+              出発日：<%= @list.departure_date %>　帰宅日：<%= @list.return_date %>
+            </li>
             </li>
           <% else %>
             <li class="list-group-item list-group-item-primary">
@@ -25,7 +30,7 @@
         <%= @list.body %>
       </div>
     </div>
-    <div class="post-content">
+    <div class="post-content col-md-6">
       <% @posts.each do |post| %>
         <div class="post-image">
           <%= link_to post_path(post) do %>
