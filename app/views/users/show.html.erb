@@ -11,8 +11,8 @@
           <%= render 'follow_button', user: @user %>        
         </div>
         <div class="follow_link">
-          <%= link_to("フォロー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab1"), class: "btn-sm btn-dark", data: {"turbolinks" => false}) %>
-          <%= link_to("フォロワー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab2"), class: "btn-sm btn-dark", data: {"turbolinks" => false}) %>
+          <%= link_to("フォロー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab1"), class: "btn-sm btn-dark") %>
+          <%= link_to("フォロワー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab2"), class: "btn-sm btn-dark") %>
         </div>
         <div class="fav_edit_link">
           <%= link_to "お気に入り", favorites_path(user_id: @user), class: "btn-sm btn-secondary" %>
@@ -29,7 +29,7 @@
   <div class="col-6 ">
     <div class="d-flex justify-content-around">
       <h2>旅行リスト一覧</h2>
-      <p><%= link_to "リスト作成ページへ", new_list_path, class:"btn btn-success", data: {"turbolinks" => false} %></p>
+      <p><%= link_to "リスト作成ページへ", new_list_path, class:"btn btn-success" %></p>
     </div>
     <% @lists.each do |list| %>
       <%= link_to list_path(list), class:"list-link" do %>

@@ -3,7 +3,7 @@
     <div class="list-content">
        <% if @list.user_id == current_user.id %>
         <%= link_to "新規投稿", new_post_path(list_id: @list), class:"btn btn-success mb-3" %>
-        <%= link_to "リスト編集", edit_list_path(@list), class:"btn btn-success mb-3", data: {"turbolinks" => false} %>
+        <%= link_to "リスト編集", edit_list_path(@list), class:"btn btn-success mb-3" %>
       <% end %>
       <div class="list_show">
         <%= link_to user_path(@list.user) do %>
