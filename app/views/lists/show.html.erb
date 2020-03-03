@@ -6,11 +6,19 @@
         <%= link_to "リスト編集", edit_list_path(@list), class:"btn btn-success mb-3" %>
       <% end %>
       <div class="list_show">
-        <%= link_to user_path(@list.user) do %>
-          <%= attachment_image_tag @list.user, :profile_image, :fill, 60, 60, fallback:   "no_image.jpg", size:'60x60'%>
-        <% end %>
-        <%= @list.title %>
-        <%= "　#{@list.departure_date}〜#{@list.return_date}" %>
+        <ul class="list-group list-group" style="max-width: 400px;">
+          <% if @list.departure_date && @list.return_date %>
+            <li class="list-group-item list-group-item-primary">
+              <%= attachment_image_tag @list.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
+              <%= @list.title %>　出発日：<%= @list.departure_date %><br>　　　　　　　帰宅日：<%= @list.return_date %>
+            </li>
+          <% else %>
+            <li class="list-group-item list-group-item-primary">
+              <%= attachment_image_tag @list.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
+              <%= @list.title %>
+            </li>
+          <% end %>
+        </ul>
       </div>
       <div class="list-body">
         <h3>旅行内容</h3>
@@ -41,4 +49,5 @@
     </div>
   </div>
 </div>
-      
+
+        
