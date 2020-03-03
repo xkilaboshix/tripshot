@@ -351,3 +351,8 @@ a:hover {
   -webkit-transform: rotate(-35deg);
   transform: rotate(-35deg);
 }
+
+// relationship関連scss
+.profile-image_follow img {
+  border-radius: 50%;
+}
