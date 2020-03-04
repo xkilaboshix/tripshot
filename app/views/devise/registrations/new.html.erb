@@ -1,44 +1,37 @@
-<div class="container-fluid registration py-5">
+<div class="container-fluid py-5">
   <div class="row">
-    <div class="offset-2">
-      <h2 class="red-border px-3">アカウントを作成</h2>
+    <div class="mx-auto">
+      <h2>アカウントを作成</h2>
     </div>
   </div>
   <div class="row mt-3">
-    <div class="offset-4 col-4">
+    <div class="mx-auto col-md-4">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
-  
         <div class="form-group">
           <%= f.label :お名前・ニックネーム, class: "brown-border px-3" %>
-            <%= f.text_field :name, placeholder:"この名前はユーザーに公開されます", class: "form-control offset-1 col-11" %>
+            <%= f.text_field :name, placeholder:"この名前はユーザーに公開されます", class: "form-control  col-md-11" %>
         </div>
-  
         <div class="form-group">
           <%= f.label :メールアドレス, class: "brown-border px-3" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"例）example@mail", class:   "form-control offset-1 col-11" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"例）example@mail", class:   "form-control col-md-11" %>
         </div>
-  
         <div class="form-group">
           <%= f.label :パスワード, class: "brown-border px-3" %>
           <%= f.password_field :password, placeholder:"最低６文字必要です。", autocomplete: "new-password", class:
-          "form-control offset-1 col-11" %>
+          "form-control col-md-11" %>
         </div>
-  
         <div class="form-group">
           <%= f.label :パスワード確認, class: "brown-border px-3" %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control offset-1 col-11" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control col-md-11" %>
         </div>
-  
         <div class="row">
           <%= f.submit "会員登録", class: "btn btn-lg btn-primary mx-auto" %>
         </div>
       <% end %>
     </div>
   </div>
-  <div class="row">
-    <div class="offset-9">
-      <%= link_to "会員の方はこちらからログイン", new_session_path(resource_name), class: "btn btn-sm btn-outline-primary" %>
-    </div>
+  <div class="row mt-3">
+    <%= link_to "会員の方はこちらからログイン", new_session_path(resource_name), class: "btn btn-sm btn-outline-primary  mx-auto" %>
   </div>
 </div>
