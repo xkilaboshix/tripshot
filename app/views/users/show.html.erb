@@ -12,13 +12,13 @@
             <%= render 'follow_button', user: @user %>        
           </div>
           <div class="follow_link">
-            <%= link_to("フォロー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab1"), class: "btn-sm btn-dark") %>
-            <%= link_to("フォロワー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab2"), class: "btn-sm btn-dark") %>
+            <%= link_to("フォロー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab1"), class: "btn btn-dark") %>
+            <%= link_to("フォロワー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab2"), class: "btn btn-dark") %>
           </div>
           <div class="fav_edit_link">
-            <%= link_to "お気に入り", favorites_path(user_id: @user), class: "btn-sm btn-secondary" %>
+            <%= link_to "お気に入り", favorites_path(user_id: @user), class: "btn btn-secondary" %>
             <% if @user.id == current_user.id %>
-              <%= link_to "変更", edit_user_path(@user), class: "btn-sm btn-secondary" %>
+              <%= link_to "変更", edit_user_path(@user), class: "btn btn-secondary" %>
             <% end %>
           </div>
           <div class ="introduction">
