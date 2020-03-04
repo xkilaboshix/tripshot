@@ -7,7 +7,10 @@
           <% if list.departure_date && list.return_date %>
             <li class="list-group-item list-group-item-primary">
               <%= attachment_image_tag list.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
-              <%= list.title %>　出発日：<%= list.departure_date %><br>　　　　　　　帰宅日：<%= list.return_date %>
+              <%= list.title %>
+            </li>
+            <li class="list-group-item list-group-item-primary">
+              出発日：<%= list.departure_date %>　帰宅日：<%= list.return_date %>
             </li>
           <% else %>
             <li class="list-group-item list-group-item-primary">
@@ -20,3 +23,4 @@
     </ul>
   </div>
 </div>
+
