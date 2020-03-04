@@ -27,7 +27,7 @@
         </p>
       </li>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 mt-5">
       <div class="d-flex justify-content-around">
         <h2>旅行リスト一覧</h2>
         <p><%= link_to "リスト作成ページへ", new_list_path, class:"btn btn-success" %></p>
@@ -37,7 +37,7 @@
           <% if list.departure_date && list.return_date %>
             <%= link_to list_path(list) do %>
               <li class="list-group-item list-group-item-primary">
-                <%= list.title %><br>出発日：<%= list.departure_date %>　帰宅日：<%= list.return_date %>
+                <%= list.title %><br>出発：<%= list.departure_date %>　帰宅：<%= list.return_date %>
               </li>
             <% end %>
           <% else %>

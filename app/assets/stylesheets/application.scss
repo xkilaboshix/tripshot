@@ -41,15 +41,16 @@
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: #464646;
   width: 100%;
+  
+  min-height: calc(100vh - 56px);
  }
-//  ヘッダー固定
-.z-index_header {
-  z-index: 9999;
-  position: -webkit-sticky;
-  position: fixed;
-  top: 0;
-  width: 100%;
+
+ @media screen and (max-width: 600px) { 
+  
 }
+
+
+
  // フッター最下部固定
 
 footer {
