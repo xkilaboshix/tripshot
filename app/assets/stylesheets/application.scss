@@ -90,20 +90,14 @@ footer {
   background-color: #464646;
   min-height: 100vh;
   width: 100%;
+  text-align: center;
 }
 
 .top-page-top {
   min-height: calc(100vh - 112px);
 }
 // トップページ
-.top-text {
-  text-align: center; 
-  padding-top: 80px;
-  padding-bottom: 200px;
-}
-.top-link {
-  text-align: center;
-}
+
 h4.top-title {
   font-size: 50px;
   font-family: Impact,Charcoal;
@@ -116,6 +110,14 @@ h4.top-title {
 p.top-introduction {
   font-size: x-large;
   font-family: Impact,Charcoal;
+}
+
+@media screen and (max-width: 600px) {
+  p.top-introduction {
+    font-size: large;
+    font-family: Impact,Charcoal;
+  }
+  
 }
 
 // user view関連のscss
