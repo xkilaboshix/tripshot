@@ -3,7 +3,7 @@
     <h2>Rooms</h2>
     <%= form_for(@room) do |f| %>
     <h5>チャットルーム作成フォーム</h5>
-    <%= f.text_field :name, class:"col-xs-12" %>
+    <%= f.text_field :name, required: true, class:"col-xs-12" %>
     <%= f.submit '部屋を作る', class:"col-xs-12" %>
     <% end %>
   </div>
