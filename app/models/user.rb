@@ -30,6 +30,16 @@ class User < ApplicationRecord
   attachment :profile_image
   attachment :background_image
 
+  # アカウントが有効かチェック
+  def active_for_authentication?
+    super && self.is_enabled?
+  end
+  # アカウントが退会済みの場合メッセージを出す
+  def inactive_message
+    self.is_enabled? ? super : :special_condition_is_not_valid
+  end
+
+  # フォロー機能メソッド
   def follow(other_user)
     unless self == other_user
       self.relationships.find_or_create_by(follow_id: other_user.id)
