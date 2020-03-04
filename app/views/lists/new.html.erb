@@ -1,7 +1,7 @@
 <div class="container">
   <% if @list.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@list.errors.count, "error") %> はこの投稿の保存を禁止しています:</h2>
+      <h2><%= pluralize(@list.errors.count, "error") %> prohibit this posting:</h2>
       <ul>
         <% @list.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
