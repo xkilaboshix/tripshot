@@ -45,11 +45,6 @@
   min-height: calc(100vh - 56px);
  }
 
- @media screen and (max-width: 600px) { 
-  
-}
-
-
 
  // フッター最下部固定
 
@@ -157,7 +152,7 @@ p.top-introduction {
 .follow_button{
   position: absolute;
   top: 3%;
-  left: 25%;
+  left: 35%;
 }
 
 .follow_link {
@@ -175,12 +170,30 @@ p.top-introduction {
 .introduction {
   position: absolute;
   top: 55%;
-  left: 30%;
-  width: 50%;
+  left: 15%;
+  width: 70%;
   height: auto;
   border-radius: 10px;
   background-color:#E5FAF8;
   word-break: break-all;
+}
+
+@media screen and (max-width: 600px) {
+  .follow_button{
+    position: absolute;
+    top: 3%;
+    left: 10%;
+  }
+  .follow_link {
+    position: absolute;
+    top: 40%;
+    left: 19%;
+  }
+  .fav_edit_link {
+    position: absolute;
+    top: 48%;
+    left: 19%;
+  }
 }
 
 
@@ -218,7 +231,7 @@ a:hover {
   position: relative;
   height:300px;
   max-width: 400px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 // いいねの位置を画像の中に
 .post-image p.like {
@@ -227,6 +240,13 @@ a:hover {
   right: 10px;
 }
 
+@media screen and (max-width: 600px) {
+  .post-image{
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
 
 
 
@@ -406,3 +426,15 @@ a:hover {
 .list-group-item img {
   border-radius: 50%;
 }
+
+// デフォルトは非表示 幅600pxより大きいとき
+.phone_area {
+  display:none;
+}
+
+// noneクラスをもつ要素は幅600px以下で消える
+// appearで現れる
+@media screen and (max-width: 600px){
+  .none {display:none}
+  .appear {display:block;}
+  }

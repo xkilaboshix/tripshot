@@ -1,6 +1,6 @@
 <div class="container lists-show">
   <div class="row">
-    <div class="comment col-md-6">
+    <div class="comment col-md-6 mt-3">
        <% if @list.user_id == current_user.id %>
         <%= link_to "新規投稿", new_post_path(list_id: @list), class:"btn btn-success mb-3" %>
         <%= link_to "リスト編集", edit_list_path(@list), class:"btn btn-success mb-3" %>
@@ -30,7 +30,7 @@
         <%= @list.body %>
       </div>
     </div>
-    <div class="post-content col-md-6">
+    <div class="post-content col-md-6 my-5">
       <% @posts.each do |post| %>
         <div class="post-image">
           <%= link_to post_path(post) do %>

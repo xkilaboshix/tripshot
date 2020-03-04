@@ -7,12 +7,14 @@
             <%= attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60,fallback:   "no_image.jpg", size:'60x60' %>
           <% end %>
           <br>　<%= post_comment.user.name %>
+          <% if user.id == post_comment.user.id %>
+            <span class="appear phone_area"><%= link_to "Destroy", post_post_comment_path(post_id: post.id, id: post_comment.id), method: :delete, remote: true, class: "btn btn-danger", data: { confirm: '削除しますか？' } %></span>
+          <% end %>
         </td>
-        
         <td><%= post_comment.comment %></td>
-        <td><%= post_comment.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+        <td class="none"><%= post_comment.created_at.strftime('%Y/%m/%d %H:%M') %></td>
         <% if user.id == post_comment.user.id %>
-        <td><%= link_to "Destroy", post_post_comment_path(post_id: post.id, id: post_comment.id), method: :delete, remote: true, class: "btn btn-danger", data: { confirm: '削除しますか？' } %></td>
+        <td class="none"><%= link_to "Destroy", post_post_comment_path(post_id: post.id, id: post_comment.id), method: :delete, remote: true, class: "btn btn-danger", data: { confirm: '削除しますか？' } %></td>
         <% end %>
       </tr>
     <% end %>

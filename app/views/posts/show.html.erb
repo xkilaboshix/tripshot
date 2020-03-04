@@ -1,11 +1,6 @@
 <div class="container">
-  <div class="post-edit">
-    <% if current_user.id == @post.user.id %>
-      <p><%= link_to "投稿編集", edit_post_path(@post), class: "btn btn-primary" %></p>
-    <% end %>
-  </div>
-  <div class="row">
-    <div class="post-content col-md-6">
+  <div class="row mt-4" style="margin-bottom:60px;">
+    <div class="post-content col-md-6 mb-4">
       <div class="list_show">
         <ul class="list-group list-group" style="max-width: 400px;">
           <% if @post.list.departure_date && @post.list.return_date %>
@@ -20,7 +15,6 @@
                 出発：<%= @post.list.departure_date %>　帰宅：<%= @post.list.return_date %>
               <% end %>
             </li>
-            
           <% else %>
             <li class="list-group-item list-group-item-primary">
               <%= attachment_image_tag @post.list.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
@@ -29,12 +23,16 @@
           <% end %>
         </ul>
       </div>
-<%# aaaaaaaaaaaaaaaaaaaa %>
       <div class="image"><%= attachment_image_tag @post, :image, :fill, 400, 300, fallback: "no_image.jpg", size:'400x300' %></div>
       <div class="d-flex justify-content-between">
-        <div class="tag_show"> 
-          <% @post.list.tag_list.each do |tag| %>
-            <span class="badge badge-info"><%= tag %></span>
+        <div>
+          <div class="tag_show"> 
+            <% @post.list.tag_list.each do |tag| %>
+              <span class="badge badge-info"><%= tag %></span>
+            <% end %>
+          </div>
+          <% if current_user.id == @post.user.id %>
+            <p><%= link_to "投稿編集", edit_post_path(@post), class: "btn btn-primary mt-2" %></p>
           <% end %>
         </div>
         <div class="fav_<%= @post.id %>">
