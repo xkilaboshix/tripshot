@@ -41,8 +41,6 @@
   /* 背景画像が読み込まれる前に表示される背景のカラー */
   background-color: #464646;
   width: 100%;
-  padding: 56px 0;
-  min-height: 100vh;
  }
 //  ヘッダー固定
 .z-index_header {
@@ -247,7 +245,8 @@ a:hover {
 .list-content {
   width: 400px;
 }
-// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+// post_showの投稿画像
 .image img {
   width: 100%;
 }
