@@ -1,4 +1,7 @@
 <div class="container my-5">
+  <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <%- end -%> 
   <div class="row">
     <div class="offset-3">
       <strong class="red-border px-3 pb-1">会員の方はこちらからログイン</strong>
