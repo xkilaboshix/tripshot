@@ -1,43 +1,33 @@
-<div class="container my-5">
-  <div class="row">
-    <div class="offset-1">
-      <h2 class="red-border px-3 pb-1">プロフィール編集</h2>
+<div class="container mt-4">
+  <div class="d-flex justify-content-center">
+    <div class="d-flex flex-column">
+      <h2 class="pb-1">プロフィール編集</h2>
+      <%= form_for(@user) do |f| %>
+        <div class="form-group">
+          <%= f.label :名前・ニックネーム, class: "brown-border" %>
+          <%= f.text_field :name, class: "form-control"%>  
+        </div>
+        <div class="form-group">
+          <%= f.label :メールアドレス, class: "brown-border" %>
+          <%= f.email_field :email, class: "form-control"%>
+        </div>
+        <div class="form-group">
+          <%= f.label :プロフィール, class: "brown-border" %>
+          <%= f.text_area :introduction, class: "form-control"%>
+        </div>
+        <div class="post-image-group">
+          <%= f.label :プロフィール画像, class: "brown-border" %><br>
+          <%= f.attachment_field :profile_image %>
+        </div>
+        <div class="post-image-group">
+          <%= f.label :背景画像, class: "brown-border" %><br>
+          <%= f.attachment_field :background_image %>
+        </div>
+        <div class="row dflex justify-content-around">
+          <%= f.submit "編集内容を保存する", class: "btn btn-outline-primary mt-3" %>
+          <%= link_to "退会する" , withdraw_user_path(@user), class: "btn btn-danger mt-auto" %>
+        </div>
+      <% end %>
     </div>
   </div>
-
-  <div class="row my-3">
-    <div class="offset-3 col-6">
-
-    <%= form_for(@user) do |f| %>
-      <div class="form-group">
-        <%= f.label :名前・ニックネーム, class: "brown-border px-3" %>
-        <%= f.text_field :name, class: "form-control offset-1 col-4"%>  
-      </div>
-      <div class="form-group">
-        <%= f.label :メールアドレス, class: "brown-border px-3" %>
-        <%= f.email_field :email, class: "form-control offset-1 col-8"%>
-      </div>
-      <div class="form-group">
-        <%= f.label :プロフィール, class: "brown-border px-3" %>
-        <%= f.text_area :introduction, class: "form-control offset-1 col-8"%>
-      </div>
-      <div class="post-image-group">
-        <%= f.label :プロフィール画像, class: "brown-border px-3" %><br>
-        <%= f.attachment_field :profile_image %>
-      </div>
-      <div class="post-image-group">
-        <%= f.label :背景画像, class: "brown-border px-3" %><br>
-        <%= f.attachment_field :background_image %>
-      </div>
-      
-      <div class="row">
-        <%= f.submit "編集内容を保存する", class: "btn btn-outline-primary offset-3 mt-3" %>
-      </div>
-    <% end %>
-
-    </div>
-
-    <div class="col-2 d-flex flex-column align-items-end">
-      <%= link_to "退会する" , withdraw_user_path(@user), class: "btn btn-danger mt-auto" %>
-    </div>
 </div>
