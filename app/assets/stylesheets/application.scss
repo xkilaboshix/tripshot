@@ -431,7 +431,12 @@ a:hover {
 
 .room-name {
   position: fixed;
+  top: 80px;
   z-index: 1;
+}
+
+#messages {
+  margin-top: 80px;
 }
 
 @media screen and (max-width: 600px) {
@@ -442,6 +447,7 @@ a:hover {
   .chat-form {
     position: fixed;
     bottom: 44px;
+    z-index: 1;
   }
 }
 // relationship関連scss
