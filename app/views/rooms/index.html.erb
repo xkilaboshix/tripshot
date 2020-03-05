@@ -1,22 +1,38 @@
-<div class="container">
+<div class="container mt-4">
   <div class = "room-form">
-    <h2>Rooms</h2>
+    <h3>ルームを作って交流しよう！</h3>
     <%= form_for(@room) do |f| %>
     <h5>チャットルーム作成フォーム</h5>
     <%= f.text_field :name, required: true, class:"col-xs-12" %>
     <%= f.submit '部屋を作る', class:"col-xs-12" %>
     <% end %>
   </div>
-  <div class="d-flex flex-column justify-content-around">
-    <ul>
-      <% @rooms.each do |room| %>
-        <li>
-          <%= link_to room.name, user_rooms_path(room_id: room.id), method: :post, data: {"turbolinks" => false} %>
-          <% if room.owner_id == current_user.id %>
-            <%= link_to "削除", room_path(room), method: :delete, class: "btn btn-danger" %>
-          <% end %>
-        </li>
-      <% end %>
-    </ul>
+  <div class="table-responsive-md mt-3">
+    <table class="table table-striped">
+      <caption>ルーム一覧</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th scope="col">部屋名</th>
+          <th scope="col">参加人数</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @rooms.each_with_index do |room, i| %>
+          <tr>
+            <th scope="row"><%= i + 1 %></th>
+            <td><%= link_to room.name, user_rooms_path(room_id: room.id), method: :post, data: {"turbolinks" => false} %></td>
+            <td><%= room.user_rooms.count %></td>
+            <td>
+              <% if room.owner_id == current_user.id %>
+                <%= link_to "削除", room_path(room), method: :delete, class: "btn btn-danger" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
 </div>
+

@@ -1,7 +1,12 @@
 App.room = App.cable.subscriptions.create("RoomChannel", {
   room: $('chatroom').data('room_id'),
   connected: function() {
+    // 最後に実行したいアクションをここに
     // Called when the subscription is ready for use on the server
+    // ここで最下部までスクロールするように指定
+    var a = document.documentElement;
+    var y = a.scrollHeight - a.clientHeight;
+    window.scroll(0, y);
   },
 
   disconnected: function() {

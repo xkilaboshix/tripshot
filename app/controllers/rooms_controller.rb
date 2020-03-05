@@ -13,7 +13,8 @@ class RoomsController < ApplicationController
   end
   def show
     @room = Room.find(params[:id])
-    @messages = @room.chats
+    # 最新のメッセージ300件まで取得
+    @messages = Chat.where(room_id: @room.id).last(300)
   end
   def destroy
     @room = Room.find(params[:id])
