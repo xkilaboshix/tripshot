@@ -1,6 +1,6 @@
 <div class="container mt-4">
   <div class = "room-form">
-    <h3>ルームを作って交流しよう！</h3>
+    <h3 class="room-title_index">ルームを作って交流しよう！</h3>
     <%= form_for(@room) do |f| %>
     <h5>チャットルーム作成フォーム</h5>
     <%= f.text_field :name, required: true, class:"col-xs-12" %>
@@ -14,7 +14,7 @@
         <tr>
           <th></th>
           <th scope="col">部屋名</th>
-          <th scope="col">参加人数</th>
+          <th scope="col">人数</th>
           <th scope="col"></th>
         </tr>
       </thead>
