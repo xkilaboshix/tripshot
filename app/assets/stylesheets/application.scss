@@ -178,6 +178,10 @@ p.top-introduction {
   word-break: break-all;
 }
 
+.trip-list {
+  min-height: 74px;
+}
+
 @media screen and (max-width: 600px) {
   .follow_button{
     position: absolute;
@@ -329,6 +333,10 @@ a:hover {
   max-width: 400px;
 }
 
+.list-text-box {
+  margin-bottom: 60px;
+}
+
 
 
 // _messageデザイン
@@ -343,7 +351,7 @@ a:hover {
 
 .yourcomment {
   width: 100%;
-  margin: 10px 0;
+  margin: 0px 0;
   overflow: hidden;
 }
 
@@ -361,6 +369,7 @@ a:hover {
 .yourcomment .chat-area {
   width: 100%;
   text-align: left;
+  height: 72px;
 }
 
 .user-name {
@@ -394,7 +403,8 @@ a:hover {
 }
 
 .mycomment {
-  margin: 10px 0;
+  margin: 0px 0;
+  height: 72px;
 }
 .mycomment p {
   display: inline-block;

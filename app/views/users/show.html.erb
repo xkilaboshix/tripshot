@@ -33,17 +33,17 @@
         <p><%= link_to "リスト作成", new_list_path, class:"btn btn-success" %></p>
       </div>
       <div class="d-flex justify-content-center">
-        <ul class="list-group list-group" style="max-width: 400px;">
+        <ul class="list-group" style="max-width: 400px;">
           <% @lists.each do |list| %>
             <% if list.departure_date && list.return_date %>
               <%= link_to list_path(list) do %>
-                <li class="list-group-item list-group-item-primary">
+                <li class=" trip-list list-group-item list-group-item-primary">
                   <%= list.title %><br>出発：<%= list.departure_date %>　帰宅：<%= list.return_date %>
                 </li>
               <% end %>
             <% else %>
               <%= link_to list_path(list) do %>
-                <li class="list-group-item list-group-item-primary">
+                <li class="trip-list list-group-item list-group-item-primary">
                   <%= list.title %>
                 </li>
               <% end %>
