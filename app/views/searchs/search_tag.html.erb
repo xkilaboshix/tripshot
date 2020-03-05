@@ -1,24 +1,28 @@
-<div class="container">
-  <% @lists.each do |list| %>
-    <% list.posts.each do |post| %>
-      <div class="post-image" style="max-width:400px;">
-        <%= link_to post_path(post) do %>
-          <%= attachment_image_tag post, :image, :fill, 400, 300, fallback: "no_image.jpg", size:'400x300' %>
-        <% end %>
-        <div class="profile-image">
-          <%= link_to user_path(post.user_id) do %>
-          <%= attachment_image_tag post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
-        <% end %>
+<div class="container-fluid mt-4">
+  <div class="row" style="margin-bottom:55px;">
+    <% @lists.each do |list| %>
+      <% list.posts.each do |post| %>
+        <div class="col-md-4">
+          <div class="post-image" style="max-width:400px;">
+            <%= link_to post_path(post) do %>
+              <%= attachment_image_tag post, :image, :fill, 400, 300, fallback: "no_image.jpg", size:'400x300' %>
+            <% end %>
+            <div class="profile-image">
+              <%= link_to user_path(post.user_id) do %>
+              <%= attachment_image_tag post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
+            <% end %>
+            </div>
+            <div class="tag"> 
+              <% list.tag_list.each do |tag| %>
+                <span class="badge badge-info"><%= tag %></span>
+              <% end %>
+            </div>
+            <p class="fav_<%= post.id %> like">
+              <%= render 'posts/like', user: current_user, post: post %>
+            </p>
+          </div>
         </div>
-        <div class="tag"> 
-          <% list.tag_list.each do |tag| %>
-            <span class="badge badge-info"><%= tag %></span>
-          <% end %>
-        </div>
-        <p class="fav_<%= post.id %> like">
-          <%= render 'posts/like', user: current_user, post: post %>
-        </p>
-      </div>
-    <% end %> 
-  <% end %>
+      <% end %> 
+    <% end %>
+  </div>
 </div>
