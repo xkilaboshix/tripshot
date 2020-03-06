@@ -152,7 +152,8 @@ p.top-introduction {
 .follow_button{
   position: absolute;
   top: 3%;
-  left: 35%;
+  left: 32%;
+  font-weight: bold;
 }
 
 .follow_link {
@@ -186,7 +187,8 @@ p.top-introduction {
   .follow_button{
     position: absolute;
     top: 3%;
-    left: 10%;
+    left: 12%;
+    font-weight: bold;
   }
   .follow_link {
     position: absolute;
@@ -471,6 +473,11 @@ a:hover {
 
 .list-group-item img {
   border-radius: 50%;
+}
+
+// search関連scss
+.search-user_table {
+  margin-bottom: 70px;
 }
 
 // デフォルトは非表示 幅600pxより大きいとき

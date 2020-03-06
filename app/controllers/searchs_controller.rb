@@ -1,7 +1,9 @@
 class SearchsController < ApplicationController
   
   def search
-    if params[:select] == "ユーザー"
+    if params[:search] == ""
+      redirect_back(fallback_location: root_path)
+    elsif params[:select] == "ユーザー"
       @users = User.where(['name LIKE ?', "%#{params[:search]}%"])
     elsif params[:select] == "リスト名"
       @lists = List.where(['title LIKE ?', "%#{params[:search]}%"]).pluck(:id)
