@@ -2,7 +2,7 @@
   <div class="row">
     <div class="profile col-md-6">
       <li>
-        <%= attachment_image_tag @user, :background_image, :fill, 570, 600,fallback: "no_image.jpg", size:'570x600',class: 'background_image' %>
+        <%= attachment_image_tag @user, :background_image, :fill, 570, 600,fallback: "no-image.png", size:'570x600',class: 'background_image' %>
         <p class="profile_image">
           <%= attachment_image_tag @user, :profile_image, :fill, 120, 120,fallback: "no_image.jpg", size:'120x120' %>
           <div class="follow_button d-flex justify-content-start">
