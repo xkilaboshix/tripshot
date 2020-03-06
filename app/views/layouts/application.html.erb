@@ -10,7 +10,9 @@
   </head>
   <body class="header_footer">
     <nav class="navbar navbar-expand-lg navbar-light  sticky-top" style="background-color: #E5FAF8;">
-      <%= link_to "tripshot", root_path, class: "navbar-brand" %>
+      <%= link_to root_path do %>
+        <%= image_tag "tripshot-logo.png", size:"100x60" %>
+      <% end %>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber"
       aria-expanded="false" aria-label="ナビゲーションの切替">
       <span class="navbar-toggler-icon"></span>
@@ -20,7 +22,7 @@
         <% if user_signed_in? %>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="">ようこそ！<%= current_user.name %>さん！<span class="sr-only">(現位置)</span></a>
+              <a class="nav-link" href="/users/<%= current_user.id %>">ようこそ！<%= current_user.name %>さん！<span class="sr-only">(現位置)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/users/<%= current_user.id %>">マイページ</a>

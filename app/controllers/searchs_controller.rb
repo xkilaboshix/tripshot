@@ -1,8 +1,6 @@
 class SearchsController < ApplicationController
   
   def search
-    
-    
     if params[:select] == "ユーザー"
       @users = User.where(['name LIKE ?', "%#{params[:search]}%"])
     elsif params[:select] == "リスト名"
