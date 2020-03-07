@@ -47,7 +47,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # ActionCableデプロイ設定
-  config.action_cable.allowed_request_origins = [ 'http://3.115.249.203/' ]
+  config.action_cable.allowed_request_origins = [ 'http://54.238.179.40/' ]
 
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
