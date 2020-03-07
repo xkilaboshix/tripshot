@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   enum achievement: [:旅見習い, :旅好き, :旅マスター, :果てなき冒険者]
-  validates :name, presence: true
+  validates :name, presence: true, length: { in: 1..8 }
   
   # emailを保存する前に小文字に
   before_save { self.email = email.downcase }
