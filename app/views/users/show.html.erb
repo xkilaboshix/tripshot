@@ -18,7 +18,7 @@
           </div>
           <div class="follow_link">
             <%= link_to("フォロー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab1"), class: "btn btn-dark") %>
-            <%= link_to("フォロワー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab2"), class: "btn btn-dark") %>
+            <%= link_to("フォロワー:#{@user.followers.count}", relationships_path(user_id: @user, anchor: "tab2"), class: "btn btn-dark") %>
           </div>
           <div class="fav_edit_link">
             <%= link_to "お気に入り", favorites_path(user_id: @user), class: "btn btn-secondary" %>
