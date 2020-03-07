@@ -149,12 +149,20 @@ p.top-introduction {
   position: relative;
 }
 
-.follow_button{
+.my_name {
   position: absolute;
   top: 3%;
-  left: 32%;
+  left: 20%;
   font-weight: bold;
+  white-space: nowrap;
 }
+
+.follow_button {
+  position: absolute;
+  top: 48%;
+  left: 51%;
+}
+
 
 .follow_link {
   position: absolute;
@@ -163,6 +171,13 @@ p.top-introduction {
 }
 
 .fav_edit_link {
+  position: absolute;
+
+  top: 48%;
+  left: 30%;
+}
+
+.follow {
   position: absolute;
   top: 48%;
   left: 30%;
@@ -439,6 +454,7 @@ a:hover {
     overflow: hidden;
   }
 
+
   @media screen and (max-width: 600px) {
     
     // noneクラスをもつ要素は幅600px以下で消える
@@ -447,12 +463,13 @@ a:hover {
     .appear {display:block;}
     
     // マイページ背景画像とプロフィール画像(users#show)
-    .follow_button{
+    .my_name {
       position: absolute;
       top: 3%;
-      left: 12%;
+      left: 10%;
       font-weight: bold;
     }
+
     .follow_link {
       position: absolute;
       top: 40%;
