@@ -107,13 +107,6 @@ p.top-introduction {
   font-family: Impact,Charcoal;
 }
 
-@media screen and (max-width: 600px) {
-  p.top-introduction {
-    font-size: large;
-    font-family: Impact,Charcoal;
-  }
-  
-}
 
 // user view関連のscss
 .list{
@@ -183,26 +176,6 @@ p.top-introduction {
   min-height: 74px;
 }
 
-@media screen and (max-width: 600px) {
-  .follow_button{
-    position: absolute;
-    top: 3%;
-    left: 12%;
-    font-weight: bold;
-  }
-  .follow_link {
-    position: absolute;
-    top: 40%;
-    left: 19%;
-  }
-  .fav_edit_link {
-    position: absolute;
-    top: 48%;
-    left: 19%;
-  }
-}
-
-
 .background_image { 
   max-width: 100%;
 }
@@ -246,17 +219,6 @@ a:hover {
   right: 10px;
 }
 
-@media screen and (max-width: 600px) {
-  .post-image{
-    position: relative;
-    width: 100%;
-    margin-bottom: 30px;
-  }
-}
-
-
-
-
 .tag {
   position: absolute;
   bottom: 0;
@@ -286,20 +248,6 @@ a:hover {
   left: 5%;
   border-radius: 50%;
 }
-
-@media screen and (max-width: 600px) {
-  .post-image img {
-    width: 100%;
-  }
-  .profile-image img{
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    border-radius: 50%;
-    width: 60px;
-  }
-}
-
 
 // コメントのプロフィール画像
 .profile-image_comment img { 
@@ -451,21 +399,6 @@ a:hover {
   margin-top: 80px;
 }
 
-@media screen and (max-width: 600px) {
-  .chat-btn {
-    margin-bottom: 17px;
-  }
-
-  .chat-form {
-    position: fixed;
-    bottom: 44px;
-    z-index: 1;
-  }
-
-  .room-title_index {
-    font-size: x-large;
-  }
-}
 // relationship関連scss
 .profile-image_follow img {
   border-radius: 50%;
@@ -485,9 +418,90 @@ a:hover {
   display:none;
 }
 
-// noneクラスをもつ要素は幅600px以下で消える
-// appearで現れる
-@media screen and (max-width: 600px){
-  .none {display:none}
-  .appear {display:block;}
+// 投稿の画像プレビュー
+  #img_field {
+    border-radius: 5px;
+    width: 400px;
+    height: 250px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #fff;
+    overflow: hidden;
   }
+
+  @media screen and (max-width: 600px) {
+    
+    // noneクラスをもつ要素は幅600px以下で消える
+    // appearで現れる
+    .none {display:none}
+    .appear {display:block;}
+    
+    // マイページ背景画像とプロフィール画像(users#show)
+    .follow_button{
+      position: absolute;
+      top: 3%;
+      left: 12%;
+      font-weight: bold;
+    }
+    .follow_link {
+      position: absolute;
+      top: 40%;
+      left: 19%;
+    }
+    .fav_edit_link {
+      position: absolute;
+      top: 48%;
+      left: 19%;
+    }
+    
+    .post-image img {
+      width: 100%;
+    }
+    .profile-image img{
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      border-radius: 50%;
+      width: 60px;
+    }
+
+    // chat関連
+    .chat-btn {
+      margin-bottom: 17px;
+    }
+  
+    .chat-form {
+      position: fixed;
+      bottom: 44px;
+      z-index: 1;
+    }
+  
+    .room-title_index {
+      font-size: x-large;
+    }
+    
+    // post関連
+    #img_field {
+      border-radius: 5px;
+      width: 350px;
+      height: 218px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    p.top-introduction {
+      font-size: large;
+      font-family: Impact,Charcoal;
+    }
+    
+    .post-image{
+      position: relative;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+  
