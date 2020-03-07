@@ -9,7 +9,7 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
     // window.scroll(0, y);
     var height = 0;
   $('.message').each( function() {
-  height += ($(this).height());
+  height += ($(this).height() + 10);
   });
    $("html, body").scrollTop(height);
   

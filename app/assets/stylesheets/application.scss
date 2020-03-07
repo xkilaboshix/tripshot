@@ -175,6 +175,7 @@ p.top-introduction {
   width: 70%;
   height: auto;
   min-height: 120px;
+  padding: 12px;
   border-radius: 10px;
   background-color:#E5FAF8;
   word-break: break-all;
@@ -223,13 +224,13 @@ a:hover {
 // いいねの位置を画像の中に
 .post-image p.like {
   position: absolute;
-  bottom: 0px;
+  bottom: -14px;
   right: 10px;
 }
 
 .tag {
   position: absolute;
-  bottom: 0;
+  bottom: 5%;
   left: 5%
 }
 
@@ -289,6 +290,7 @@ a:hover {
   background-color: #E5FAF8;
   border-radius: 0.25rem;
   max-width: 400px;
+  padding: 12px;
 }
 
 .list-text-box {
