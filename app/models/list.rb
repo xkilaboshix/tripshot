@@ -10,13 +10,13 @@ class List < ApplicationRecord
 
   def departure_date_return_date_present?
     if (departure_date.present? && return_date.nil?) || (departure_date.nil? && return_date.present?)
-      errors.add(:departure_date, "and Return date must be present if you enter the date.") 
+      errors.add(:departure_date, "と帰宅日のうち片方だけの入力はできません") 
     end
   end
 
   def departure_date_cannot_be_greater_than_return_date
     if departure_date.present? && return_date.present? && return_date < departure_date
-      errors.add(:deaparture_date, "must be before Return date.")
+      errors.add(:departure_date, "は帰宅日より前に設定してください")
     end
   end
 end

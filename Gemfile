@@ -88,3 +88,6 @@ gem 'acts-as-taggable-on', '~> 6.0'
 # font-awesome  アイコン
 gem 'font-awesome-rails'
 
+# devise多言語サポート機能
+gem 'rails-i18n', '~> 5.1'
+
