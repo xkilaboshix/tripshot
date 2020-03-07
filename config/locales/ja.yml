@@ -2,9 +2,11 @@ ja:
   activerecord:
     attributes:
       list:
-        title: 旅行内容
+        title: 旅行タイトル
         departure_date: 出発日
         return_date: 帰宅日
+      post_comment:
+        comment: コメント
       user:
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
@@ -29,6 +31,7 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+        name: 名前
     models:
       user: ユーザ
   devise:

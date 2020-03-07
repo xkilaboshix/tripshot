@@ -1,4 +1,14 @@
 <div class="container">
+  <% if @list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@list.errors.count, "つのエラー") %> により投稿ができません:</h2>
+      <ul>
+        <% @list.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="d-flex justify-content-center list-text-box mt-5">
     <%= form_with(model: @list, local: true) do |f| %>
       <h2>旅行リスト編集ページ</h2>
