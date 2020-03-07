@@ -1,9 +1,9 @@
 <div class="top top-page-top container-fluid">
   <div class="d-flex flex-column justify-content-around" style="height:600px;">
     <div class="top-text">
-      <% if flash[:log_out] %>
+      <% if flash[:notice] %>
         <div class="alert alert-success login-alert mt-4">
-          <%= flash[:log_out] %>
+          <%= flash[:notice] %>
         </div>
       <% end %>
       <h4 class="top-title"><strong>In tripshot</strong></h4>
