@@ -301,7 +301,7 @@ a:hover {
 .message-content {
   padding: 0;
   max-width: 450px;
-  margin: 0 auto;
+  margin: 15 auto;
   text-align: right;
   font-size: 14px;
 
@@ -309,7 +309,7 @@ a:hover {
 
 .yourcomment {
   width: 100%;
-  margin: 0px 0;
+  margin: 10px 0;
   overflow: hidden;
 }
 
@@ -327,7 +327,6 @@ a:hover {
 .yourcomment .chat-area {
   width: 100%;
   text-align: left;
-  height: 72px;
 }
 
 .user-name {
@@ -361,8 +360,7 @@ a:hover {
 }
 
 .mycomment {
-  margin: 0px 0;
-  height: 72px;
+  margin: 10px 0;
 }
 .mycomment p {
   display: inline-block;
