@@ -132,9 +132,16 @@ p.top-introduction {
   position: relative;
   list-style: none;
 }
+
+.login-alert {
+  position: absolute;
+  top: 7%;
+  left: calc(50% - 108px);
+}
+
 .profile p {
   position: absolute;
-  top: 15%;
+  top: 17%;
   left: calc(50% - 60px);
 }
 
