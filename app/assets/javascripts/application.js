@@ -17,3 +17,16 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+
+// 検索ボタン空で押せないように
+$(function() {
+  $('.search-send').prop("disabled", true);
+  $('.search-form').change(function() {
+    if ($('.search-form').val() !== "") {
+      $('.search-send').prop("disabled", false);
+    }
+    else {
+      $('.search-send').prop("disabled", true);
+     }
+  });
+});
