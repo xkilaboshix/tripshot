@@ -45,16 +45,6 @@
     <div id="result">
       <%= render 'post_comments/error_message', post_comment: @post_comment %>
     </div>
-      <% if @post_comment.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@post_comment.errors.count, "つのエラー") %> により登録ができません:</h2>
-          <ul>
-            <% @post_comment.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
       <h4>コメント</h4>
       <%= render 'comment', user: current_user, post: @post %>
       <div class="post_comment">
