@@ -60,6 +60,9 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  # rspecで使用
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
 end
 
 gem 'dotenv-rails'
