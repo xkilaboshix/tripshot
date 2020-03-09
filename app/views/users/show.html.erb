@@ -11,9 +11,11 @@
         <p class="profile_image">
           <%= attachment_image_tag @user, :profile_image, :fill, 120, 120,fallback: "no_image.jpg", size:'120x120' %>
           <div class="my_name d-flex justify-content-start">
-            <%= @user.achievement %>　
-            <%= @user.name %>　
-            <%= "旅行：" + @lists.count.to_s + "回" %>　        
+            <div class="inline text-center">
+              <%= @user.achievement %>　
+              <%= @user.name %>　
+              <%= "旅行：" + @lists.count.to_s + "回" %>　        
+            </div>
           </div>
           <div class="follow_link">
             <%= link_to("フォロー:#{@user.followings.count}", relationships_path(user_id: @user, anchor: "tab1"), class: "btn btn-dark") %>
