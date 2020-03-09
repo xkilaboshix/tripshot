@@ -8,8 +8,12 @@ class RoomsController < ApplicationController
   def create
     @room = Room.new(room_params)
     @room.owner_id = current_user.id
-    @room.save
-    redirect_to rooms_path
+    if @room.save
+      redirect_to rooms_path
+    else
+      @rooms = Room.all
+      render :index
+    end
   end
   def show
     @room = Room.find(params[:id])
