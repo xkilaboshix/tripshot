@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do
     before do
       @user = User.new
       @user.is_enabled = true
-      @user.name = "あああああああああ"
+      @user.name = "あ" * 9
       @user.profile_image_id = Rack::Test::UploadedFile.new(image_path)
       @user.background_image_id = Rack::Test::UploadedFile.new(image_path)
       @user.achievement = "旅見習い"

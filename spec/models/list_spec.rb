@@ -42,7 +42,7 @@ RSpec.describe List, type: :model do
       @list = List.new
       @list.id = 1
       @list.user_id = 1
-      @list.title = "ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ"
+      @list.title = "あ" * 76
       @list.body = "旅行行きました。"
       @list.departure_date = "2020/02/22"
       @list.return_date = "2020/02/23"
