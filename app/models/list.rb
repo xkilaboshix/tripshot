@@ -4,6 +4,12 @@ class List < ApplicationRecord
   validate :departure_date_return_date_present?
   belongs_to :user
   has_many :posts, dependent: :destroy
+
+  # タグ数のバリデーション
+  validates :tag_list, :length => {
+    :maximum   => 3,
+    :too_long  => "数が限界を超えました！　限界タグ数は%{count}です！"
+  }
   
   # タグ機能の記述
   acts_as_taggable

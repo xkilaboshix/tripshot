@@ -5,6 +5,7 @@ ja:
         title: 旅行タイトル
         departure_date: 出発日
         return_date: 帰宅日
+        tag_list: タグ
       post_comment:
         comment: コメント
       user:
