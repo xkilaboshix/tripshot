@@ -39,9 +39,9 @@
             </li>        
           </ul>
           <%= form_tag(search_path,:method => 'get', class:"form-inline my-2 my-lg-0") do %>
-            <%= text_field_tag :search %>
+            <%= text_field_tag :search, "", class: "search-form" %>
             <%= select_tag :select, options_for_select([["ユーザー","ユーザー"],["リスト名","リスト名"],["リストのタグ","リストのタグ"]]) %>
-            <%= submit_tag '検索', class:"btn btn-outline-success my-2 my-sm-0" %>
+            <%= submit_tag '検索', class:"search-send btn btn-outline-success my-2 my-sm-0" %>
           <% end %>
         <% else %>
           <ul class="navbar-nav mr-auto">
