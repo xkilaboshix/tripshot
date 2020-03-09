@@ -107,4 +107,22 @@ RSpec.describe List, type: :model do
       expect(@list.errors[:departure_date]).to include("と帰宅日のうち片方だけの入力はできません")
     end
   end
+
+  context "data is invalid" do
+    
+    before do
+      @list = List.new
+      @list.id = 1
+      @list.user_id = 1
+      @list.title = "ハワイ旅行"
+      @list.body = ""
+      @list.departure_date = ""
+      @list.return_date = ""
+      @list.tag_list = "ハワイ, イルカ, カメ, シュノーケリング"
+    end
+    it "because tag_list limit is 3" do
+      expect(@list).to be_invalid
+      expect(@list.errors[:tag_list]).to include("数が限界を超えました！　限界タグ数は3です！")
+    end
+  end
 end
