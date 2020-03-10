@@ -211,6 +211,56 @@ p.top-introduction {
 .profile_image img {
   border-radius: 50%;
 }
+
+// tabのCSS
+.tab_area {
+  overflow: hidden;
+  display: table;
+  margin: 0;
+}
+
+.tab_area li {
+  /*Tabの装飾*/
+  width: 139px;
+  height: 49px;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  display: table-cell;
+  color: black;
+  border-bottom: 1px dotted #bbbbbb;
+  // ゆっくりと色を変える
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+// マウスを乗せたときに背景の色を変える
+.tab_area li:hover {
+  background-color: rgb(15, 91, 206);
+}
+
+.all_area {
+  padding: 10px;
+  overflow: hidden;
+}
+.all_area div.content_area {
+  padding: 10px 10px 10px 2px;
+  
+}
+
+.tab_area li.select {
+  background-image: none;
+  color: #11e234;
+  border-bottom: 2px solid #11e234;
+}
+  
+.hide {
+  display: none;
+}
+
+
 // 退会画面
 h1.red-border {
   padding-top: 40px;
@@ -235,6 +285,11 @@ a:hover {
 }
 
 // post view関連のscss
+.post_index {
+  margin-top: 25px;
+  margin-bottom: 75px;
+}
+
 .post-image{
   position: relative;
   height:300px;
@@ -256,6 +311,7 @@ a:hover {
 
 .post-content {
   max-width: 400px;
+  margin-bottom: 75px;
 }
 
 .post-comments {
@@ -459,6 +515,11 @@ a:hover {
     overflow: hidden;
   }
 
+  // favoriteページ
+  .favorite_index {
+    margin-bottom: 50px;
+  }
+
 
   @media screen and (max-width: 600px) {
     
@@ -511,6 +572,10 @@ a:hover {
       width: 60px;
     }
 
+    .lists {
+      min-height: 559px;
+    }
+
     // chat関連
     .chat-btn {
       margin-bottom: 17px;
@@ -527,6 +592,11 @@ a:hover {
     }
     
     // post関連
+    .post_index {
+      margin-top: 25px;
+      margin-bottom: 0px;
+    }
+
     #img_field {
       border-radius: 5px;
       width: 350px;
@@ -552,6 +622,12 @@ a:hover {
     // favoriteページ
     .favorite_index {
       margin-top: 30px;
+      margin-bottom: 0px;
+    }
+    // list関連
+    .post-content {
+      max-width: 400px;
+      margin-bottom: 0px;
     }
   }
   
