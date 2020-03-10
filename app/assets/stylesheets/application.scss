@@ -467,17 +467,26 @@ a:hover {
     .none {display:none}
     .appear {display:block;}
     
+    // トップページ
+    .top-page-top {
+      min-height: calc(100vh - 56px);
+    }
+    
     // マイページ背景画像とプロフィール画像(users#show)
     .my_name {
       position: absolute;
       top: 5%;
       left: 50%;
       -ms-transform: translate(-50%,-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
-  margin:0;
-  padding:0;
+      -webkit-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      margin:0;
+      padding:0;
       font-weight: bold;
+    }
+
+    .profile {
+      padding: 0;
     }
 
     .follow_link {
@@ -509,7 +518,7 @@ a:hover {
   
     .chat-form {
       position: fixed;
-      bottom: 44px;
+      bottom: 10px;
       z-index: 1;
     }
   
@@ -538,6 +547,11 @@ a:hover {
       position: relative;
       width: 100%;
       margin-bottom: 30px;
+    }
+    
+    // favoriteページ
+    .favorite_index {
+      margin-top: 30px;
     }
   }
   
