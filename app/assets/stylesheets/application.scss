@@ -56,6 +56,11 @@ footer {
   bottom: 0;
 }
 
+// ページネーション中央寄せ
+.pagination {
+  justify-content: center;
+}
+
 // いいねの色、大きさ
 .fav {
   color: red;

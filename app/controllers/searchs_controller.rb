@@ -18,11 +18,12 @@ class SearchsController < ApplicationController
 
   def search_list
     @lists = List.where(id: session[:list_id])
-    session[:list_id].clear
+    # 検索結果がリロードで消えるのでコメントアウト
+    # session[:list_id].clear
   end
 
   def search_tag 
-    @lists = List.where(id: session[:list_id])
-    session[:list_id].clear
+    @lists = List.where(id: session[:list_id]).page(params[:page]).reverse_order
+    # session[:list_id].clear
   end
 end
