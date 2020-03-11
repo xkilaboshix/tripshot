@@ -11,12 +11,12 @@ before_action :correct_user, except: [:show]
   end
 
   def update
-    current_user.update(set_params)
-    respond_to do |format|
-      flash[:notice] = "ユーザー情報を更新しました。"
-      format.js { render ajax_redirect_to(user_path(current_user.id)) }
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(current_user)
+    else
+      render 'edit'
     end
-    
   end
 
   def withdraw
@@ -41,10 +41,6 @@ before_action :correct_user, except: [:show]
     if current_user.id != user.id
       redirect_to user_path(current_user)
     end
-  end
-
-  def ajax_redirect_to(redirect_uri)
-    { js: "window.location.replace('#{redirect_uri}');" }
   end
 
 end
