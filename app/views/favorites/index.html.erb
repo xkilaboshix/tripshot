@@ -23,7 +23,9 @@
       </div>
     <% end %>
   </div>
-  <%= paginate @favorites %>
+  <% if request.from_pc? %>
+    <%= paginate @favorites %>
+  <% end %>
 </div>
 
 

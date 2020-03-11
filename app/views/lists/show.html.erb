@@ -51,7 +51,9 @@
           </p>
         </div>
       <% end %>
-      <%= paginate @posts %>
+      <% if request.from_pc? %>
+        <%= paginate @posts %>
+      <% end %>
     </div>
   </div>
 </div>

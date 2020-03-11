@@ -5,8 +5,14 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def index
-    @posts = Post.page(params[:page]).reverse_order
-    @favorite_ranks = week_post_calculate[0..2]
+    if request.from_pc? 
+      @posts = Post.page(params[:page]).per(3).reverse_order
+      @favorite_ranks = week_post_calculate[0..2]
+    else
+      @posts = Post.all.reverse_order
+      @favorite_ranks = week_post_calculate[0..2]
+    end
+    
   end
 
   def create
