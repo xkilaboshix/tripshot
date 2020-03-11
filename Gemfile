@@ -98,3 +98,5 @@ gem 'rails-i18n', '~> 5.1'
 # ページネーション
 gem 'kaminari','~> 1.1.1'
 
+gem 'rack-user_agent'
+
