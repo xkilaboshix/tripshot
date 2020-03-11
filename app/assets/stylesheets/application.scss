@@ -45,6 +45,11 @@
   min-height: calc(100vh - 56px);
  }
 
+ .text_white {
+  color: floralwhite;
+  text-shadow: -2px 2px 5px black;
+ }
+
 
  // フッター最下部固定
 
@@ -70,11 +75,21 @@ footer {
 // いいねの色、大きさ
 .fav {
   color: red;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .heart-count {
   color: rgba(255, 255, 255, 0.5);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+// ハートに影
+.fa-heart:before {
+  filter: drop-shadow(2px 2px 2px rgba(255, 144, 235, 0.8));
+}
+
+// バッジに影を付与
+.badge {
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
 }
 
 // top背景画像
@@ -120,7 +135,8 @@ p.top-introduction {
   border-bottom: inset 2px white;
   max-width: 800px;
   margin: 0 auto;
-  color: black;
+  color: floralwhite;
+  text-shadow: -2px 2px 5px black;
 }
 
 // user view関連のscss
@@ -186,15 +202,26 @@ p.top-introduction {
 
 .follow_link {
   position: absolute;
-  top: 40%;
-  left: 30%;
+  top: 43%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .fav_edit_link {
   position: absolute;
-
-  top: 48%;
-  left: 30%;
+  top: 51%;
+  left: 44%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
 }
 
 .follow {
@@ -578,13 +605,26 @@ a:hover {
 
     .follow_link {
       position: absolute;
-      top: 40%;
-      left: 19%;
+      top: 43%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      text-align: center;
     }
+
     .fav_edit_link {
       position: absolute;
-      top: 48%;
-      left: 19%;
+      top: 51%;
+      left: 42%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      text-align: center;
     }
     
     .post-image img {

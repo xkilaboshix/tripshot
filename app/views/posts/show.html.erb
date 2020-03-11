@@ -45,7 +45,7 @@
     <div id="result">
       <%= render 'post_comments/error_message', post_comment: @post_comment %>
     </div>
-      <h4>コメント</h4>
+      <h4 class="text_white">コメント</h4>
       <%= render 'comment', user: current_user, post: @post %>
       <div class="post_comment">
         <%= form_with(model: [@post, @post_comment]) do |f| %>
