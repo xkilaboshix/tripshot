@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).reverse_order
     @favorite_ranks = week_post_calculate[0..2]
   end
 

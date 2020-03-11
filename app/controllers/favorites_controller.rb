@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    @favorites = Favorite.where(user_id: params[:user_id])
+    @favorites = Favorite.where(user_id: params[:user_id]).page(params[:page]).reverse_order
   end
 
   def create
