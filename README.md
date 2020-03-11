@@ -12,6 +12,7 @@
 ・jquery-rails  
 ・acts-as-taggable-on  
 ・font-awesome  
+・kaminari  
 
 ## 使用方法
 ・まず、サインアップを行います。プロフィールを編集し、マイページの背景とプロフィール画像、自己紹介を設定しましょう。  
