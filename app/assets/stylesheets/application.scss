@@ -292,7 +292,6 @@ a:hover {
 
 .post-image{
   position: relative;
-  height:300px;
   max-width: 400px;
   margin-bottom: 10px;
 }
@@ -325,6 +324,7 @@ a:hover {
 // post_showの投稿画像
 .image img {
   width: 100%;
+  height: auto;
 }
 
 .profile-image img{
@@ -563,6 +563,7 @@ a:hover {
     
     .post-image img {
       width: 100%;
+      height: auto;
     }
     .profile-image img{
       position: absolute;
