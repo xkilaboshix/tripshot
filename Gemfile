@@ -95,3 +95,6 @@ gem 'font-awesome-rails'
 # devise多言語サポート機能
 gem 'rails-i18n', '~> 5.1'
 
+# ページネーション
+gem 'kaminari','~> 1.1.1'
+
