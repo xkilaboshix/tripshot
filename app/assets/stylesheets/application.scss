@@ -74,7 +74,7 @@ footer {
 }
 
 .heart-count {
-  color: black;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 // top背景画像
@@ -116,8 +116,12 @@ h4.top-title {
 p.top-introduction {
   font-size: x-large;
   font-family: Impact,Charcoal;
+  border-top: inset 2px white;
+  border-bottom: inset 2px white;
+  max-width: 800px;
+  margin: 0 auto;
+  color: black;
 }
-
 
 // user view関連のscss
 .list{
