@@ -3,6 +3,13 @@
     <div class="col-md-6">
       <h3 class="text_white">週間お気に入りランキング</h3>
       <% @favorite_ranks.each do |post| %>
+        <% if post.id == @first_rank.id %>
+          <%= image_tag 'first_place.png', size: '48x48' %>
+        <% elsif post.id == @second_rank.id %>
+          <%= image_tag 'second_place.png', size: '48x48' %>
+        <% elsif post.id == @third_rank.id %>
+          <%= image_tag 'third_place.png', size: '48x48' %>
+        <% end %>
         <div class="post-image">
           <%= link_to post_path(post) do %>
             <%= attachment_image_tag post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>

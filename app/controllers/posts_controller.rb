@@ -5,6 +5,9 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def index
+      @first_rank = week_post_calculate[0]
+      @second_rank = week_post_calculate[1]
+      @third_rank = week_post_calculate[2]
     if request.from_pc? 
       @posts = Post.page(params[:page]).per(3).reverse_order
       @favorite_ranks = week_post_calculate[0..2]
@@ -12,6 +15,8 @@ class PostsController < ApplicationController
       @posts = Post.all.reverse_order
       @favorite_ranks = week_post_calculate[0..2]
     end
+
+    
     
   end
 
@@ -69,11 +74,15 @@ class PostsController < ApplicationController
     # 全てのお気に入りランキングをとってくる
     favorite_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').pluck(:post_id))
     week_rank = []
+    rank_index = 1
     favorite_ranks.each do |post|
       if post.created_at > past_date
         week_rank += Post.where(created_at: post.created_at)
+        rank_index += 1
       end
     end  
     return  week_rank
   end
+
+  
 end
