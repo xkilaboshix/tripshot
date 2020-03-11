@@ -215,13 +215,18 @@ p.top-introduction {
 .fav_edit_link {
   position: absolute;
   top: 51%;
-  left: 44%;
+  left: 79%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   margin: 0;
   padding: 0;
   width: 100%;
   text-align: center;
+  display: inline-flex;
+}
+
+.favorite_link {
+  margin-right: 5px;
 }
 
 .follow {
@@ -241,6 +246,10 @@ p.top-introduction {
   border-radius: 10px;
   background-color:#E5FAF8;
   word-break: break-all;
+}
+
+.user_edit_button {
+
 }
 
 .trip-list {
@@ -618,13 +627,14 @@ a:hover {
     .fav_edit_link {
       position: absolute;
       top: 51%;
-      left: 42%;
+      left: 70%;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       margin: 0;
       padding: 0;
       width: 100%;
       text-align: center;
+      display: inline-flex;
     }
     
     .post-image img {
