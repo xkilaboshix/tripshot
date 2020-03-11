@@ -61,6 +61,12 @@ footer {
   justify-content: center;
 }
 
+// 投稿画像
+.post-image img {
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+}
+
 // いいねの色、大きさ
 .fav {
   color: red;
@@ -215,6 +221,7 @@ p.top-introduction {
 }
 .profile_image img {
   border-radius: 50%;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
 }
 
 // tabのCSS
@@ -330,17 +337,21 @@ a:hover {
 .image img {
   width: 100%;
   height: auto;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+  border-radius: 0.25rem;
 }
 
 .profile-image img{
   position: absolute;
   top: 5%;
   left: 5%;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
   border-radius: 50%;
 }
 
 // コメントのプロフィール画像
 .profile-image_comment img { 
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
   border-radius: 50%;
 }
 
@@ -352,6 +363,7 @@ a:hover {
 }
 .list_show img {
   border-radius: 50%;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
 }
 
 
@@ -491,6 +503,7 @@ a:hover {
 
 // relationship関連scss
 .profile-image_follow img {
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
   border-radius: 50%;
 }
 
@@ -523,6 +536,10 @@ a:hover {
   // favoriteページ
   .favorite_index {
     margin-bottom: 50px;
+  }
+
+  .search_tag {
+    margin-bottom: 55px;
   }
 
 
@@ -569,6 +586,8 @@ a:hover {
     .post-image img {
       width: 100%;
       height: auto;
+      box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+      border-radius: 0.25rem;
     }
     .profile-image img{
       position: absolute;
@@ -635,6 +654,11 @@ a:hover {
       max-width: 400px;
       margin-bottom: 0px;
     }
+    // search_tagページ
+    .search_tag {
+      margin-bottom: 24px;
+    }
+
   }
 
   
