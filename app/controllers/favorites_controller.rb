@@ -3,7 +3,7 @@ class FavoritesController < ApplicationController
     if request.from_pc?
       @favorites = Favorite.where(user_id: params[:user_id]).page(params[:page]).reverse_order
     else
-      @favorites = Favorite.where(user_id: params[:user_id])
+      @favorites = Favorite.where(user_id: params[:user_id]).reverse_order
     end
   end
 
