@@ -11,9 +11,9 @@
 ・bootstrap4.1.1  
 ・jquery-rails  
 ・acts-as-taggable-on（タグ機能）  
-・font-awesome  （アイコン） 
-・kaminari  （ページネーション） 
-・rack-user_agent  （デバイス判定） 
+・font-awesome（アイコン）  
+・kaminari（ページネーション）  
+・rack-user_agent（デバイス判定）  
 
 ## 使用方法
 ・まず、サインアップを行います。プロフィールを編集し、マイページの背景とプロフィール画像、自己紹介を設定しましょう。  
