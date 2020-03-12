@@ -14,13 +14,7 @@
             <% end %>
           </div>
           <p class="rank_image">
-            <% if post.id == @first_rank.id %>
-              <%= image_tag 'first_place.png', size: '48x48' %>
-            <% elsif post.id == @second_rank.id %>
-              <%= image_tag 'second_place.png', size: '48x48' %>
-            <% elsif post.id == @third_rank.id %>
-              <%= image_tag 'third_place.png', size: '48x48' %>
-            <% end %>
+            <%= image_tag rank(post,@first_rank,@second_rank,@third_rank), size: '48x48' %>
           </p>
           <div class="tag"> 
             <% post.list.tag_list.each do |tag| %>
