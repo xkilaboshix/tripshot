@@ -580,6 +580,10 @@ a:hover {
   border-radius: 50%;
 }
 
+.list-group-item {
+  min-width: 321px;
+}
+
 // search関連scss
 .search-user_table {
   margin-bottom: 70px;
