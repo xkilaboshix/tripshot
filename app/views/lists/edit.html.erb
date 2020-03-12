@@ -1,6 +1,6 @@
 <div class="container">
   <% if @list.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(@list.errors.count, "つのエラー") %> により投稿ができません:</h2>
       <ul>
         <% @list.errors.full_messages.each do |msg| %>

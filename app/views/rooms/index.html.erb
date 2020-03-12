@@ -3,10 +3,9 @@
     <h3 class="room-title_index text_white">ルームを作って交流しよう！</h3>
     <% if @room.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@room.errors.count, "つのエラー") %> により登録ができません:</h2>
           <ul>
             <% @room.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
+            <li class="alert alert-danger"><%= msg %></li>
             <% end %>
           </ul>
         </div>

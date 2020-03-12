@@ -7,7 +7,7 @@
           <div id="img_field">
             <%= attachment_image_tag @post, :image %>
           </div>
-          <%= f.attachment_field :image, required: true, class: "image", id: "file" %>
+          <%= f.attachment_field :image, class: "image", id: "file" %>
         </div>
         <div class="form-group">
           <%= f.label :内容（任意項目）%>

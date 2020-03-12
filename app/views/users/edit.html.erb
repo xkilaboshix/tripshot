@@ -3,7 +3,7 @@
     <div class="d-flex flex-column">
       <h2 class="pb-1">プロフィール編集</h2>
       <% if @user.errors.any? %>
-        <div id="error_explanation">
+        <div id="error_explanation" class="alert alert-danger">
           <h2><%= pluralize(@user.errors.count, "つのエラー") %> により登録ができません:</h2>
           <ul>
             <% @user.errors.full_messages.each do |msg| %>
