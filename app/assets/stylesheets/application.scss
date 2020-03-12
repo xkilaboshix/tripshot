@@ -391,7 +391,14 @@ a:hover {
   width: 345px;
   background-color: #E5FAF8;
   border-radius: 0.25rem;
-  padding: 0 auto;
+  padding: 12px;
+  text-align: center;
+}
+
+.no_rank_text {
+  padding-top: 50px;
+  line-height: 50px;
+  font-size: x-large;
 }
 
 // post_showの投稿画像
