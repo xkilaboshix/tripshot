@@ -1,7 +1,7 @@
 <div class="container mt-4" style="margin-bottom:60px;">
   <div class="d-flex justify-content-center">
     <div class="d-flex flex-column">
-      <h2 class="pb-1">プロフィール編集</h2>
+      <h3 class="text_white">プロフィール編集</h3>
       <% if @user.errors.any? %>
         <div id="error_explanation" class="alert alert-danger">
           <h2><%= pluralize(@user.errors.count, "つのエラー") %> により登録ができません:</h2>

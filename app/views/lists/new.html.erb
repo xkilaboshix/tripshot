@@ -11,7 +11,7 @@
   <% end %>
   <div class="d-flex justify-content-center list-text-box">
     <%= form_with(model: @list, local: true) do |f| %>
-      <h2>旅行リスト作成ページ</h2>
+      <h3 class="text_white">旅行リスト作成ページ</h3>
       <div class="form-group">
         <%= f.label :旅行タイトル%>
         <%= f.text_field :title, class: "form-control", placeholder: "1文字以上75文字以下" %>
