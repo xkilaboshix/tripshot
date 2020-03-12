@@ -4,10 +4,12 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+
   def index
       @first_rank = week_post_calculate[0]
       @second_rank = week_post_calculate[1]
       @third_rank = week_post_calculate[2]
+
     if request.from_pc? 
       @posts = Post.page(params[:page]).per(3).reverse_order
       @favorite_ranks = week_post_calculate[0..2]
@@ -16,8 +18,6 @@ class PostsController < ApplicationController
       @favorite_ranks = week_post_calculate[0..2]
     end
 
-    
-    
   end
 
   def create
@@ -68,6 +68,7 @@ class PostsController < ApplicationController
   
     # 一週間のお気に入りランキングを計算
   def week_post_calculate
+
     today = Date.today
     past_date = today - 7
     
@@ -84,5 +85,4 @@ class PostsController < ApplicationController
     return  week_rank
   end
 
-  
 end
