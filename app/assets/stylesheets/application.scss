@@ -356,6 +356,13 @@ a:hover {
   left: 5%
 }
 
+.rank_image {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: #f8f9fa1a;
+}
+
 .post-content {
   max-width: 400px;
   margin-bottom: 75px;
@@ -571,7 +578,8 @@ a:hover {
 
   // favoriteページ
   .favorite_index {
-    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-bottom: 65px;
   }
 
   .search_tag {
@@ -707,6 +715,11 @@ a:hover {
     // search_tagページ
     .search_tag {
       margin-bottom: 24px;
+    }
+
+    .rank_image img {
+      height: 48px;
+      width: 48px
     }
 
   }
