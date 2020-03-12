@@ -180,6 +180,14 @@ p.top-introduction {
   position: relative;
 }
 
+.edit_user_btn {
+  min-width: 109px;
+}
+
+.follow_user_btn {
+  min-width: 109px;
+}
+
 .my_name {
   position: absolute;
   top: 5%;
@@ -428,6 +436,7 @@ a:hover {
   border-radius: 0.25rem;
   max-width: 400px;
   padding: 12px;
+  min-height: 86px;
 }
 
 .list-text-box {

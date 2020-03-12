@@ -24,7 +24,7 @@
           <div class="fav_edit_link">
             <%= link_to "お気に入り", favorites_path(user_id: @user), class: "btn btn-secondary favorite_link" %>
             <% if @user.id == current_user.id %>
-              <%= link_to "変更", edit_user_path(@user), class: "btn btn-secondary" %>
+              <%= link_to "変更", edit_user_path(@user), class: "btn btn-secondary edit_user_btn" %>
             <% else %>
               <%= render 'follow_button', user: @user %>
             <% end %>
