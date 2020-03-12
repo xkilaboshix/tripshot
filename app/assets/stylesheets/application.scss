@@ -352,6 +352,7 @@ a:hover {
   max-width: 400px;
   margin-bottom: 10px;
 }
+
 // いいねの位置を画像の中に
 .post-image p.like {
   position: absolute;
@@ -383,6 +384,14 @@ a:hover {
 
 .list-content {
   width: 400px;
+}
+
+.no_rank {
+  height: 258px;
+  width: 345px;
+  background-color: #E5FAF8;
+  border-radius: 0.25rem;
+  padding: 0 auto;
 }
 
 // post_showの投稿画像
