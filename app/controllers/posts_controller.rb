@@ -70,11 +70,12 @@ class PostsController < ApplicationController
   def week_post_calculate
 
     # 全てのお気に入りランキングをとってくる
-    
     posts = Post.where("created_at > ?", 7.days.ago)
     post_ids = Favorite.where(post_id: posts.pluck(:id)).group(:post_id).order('count(post_id) DESC').pluck(:post_id)
     post_ranks_ids = post_ids.first(3)
+
     post_ranks = []
+
     post_ranks_ids.each do |id|
       post_ranks += posts.select{|post| post.id == id }
     end
