@@ -12,10 +12,10 @@ class PostsController < ApplicationController
 
     if request.from_pc? 
       @posts = Post.page(params[:page]).per(3).reverse_order
-      @favorite_ranks = week_post_calculate[0..2]
+      @favorite_ranks = week_post_calculate
     else
       @posts = Post.all.reverse_order
-      @favorite_ranks = week_post_calculate[0..2]
+      @favorite_ranks = week_post_calculate
     end
 
   end
@@ -69,19 +69,16 @@ class PostsController < ApplicationController
     # 一週間のお気に入りランキングを計算
   def week_post_calculate
 
-    today = Date.today
-    past_date = today - 7
-    
     # 全てのお気に入りランキングをとってくる
-    favorite_ranks = Post.where(id: Favorite.group(:post_id).order('count(post_id) desc').pluck(:post_id))
-    week_rank = []
-
-    favorite_ranks.each do |post|
-      if post.created_at > past_date
-        week_rank += Post.where(created_at: post.created_at)
-      end
-    end  
-    return  week_rank
+    
+    posts = Post.where("created_at > ?", 7.days.ago)
+    post_ids = Favorite.where(post_id: posts.pluck(:id)).group(:post_id).order('count(post_id) DESC').pluck(:post_id)
+    post_ranks_ids = post_ids.first(3)
+    post_ranks = []
+    post_ranks_ids.each do |id|
+      post_ranks += posts.select{|post| post.id == id }
+    end
+    return post_ranks
   end
 
 end
