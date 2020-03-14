@@ -74,6 +74,8 @@ footer {
 .post-image img {
   border-radius: 0.25rem;
   box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+  max-width: 400px;
+  max-height: 300px;
 }
 
 // いいねの色、大きさ
@@ -352,7 +354,7 @@ a:hover {
   margin-bottom: 75px;
 }
 
-.post-image{
+.post-image {
   position: relative;
   max-width: 400px;
   margin-bottom: 10px;
@@ -682,6 +684,8 @@ a:hover {
       height: auto;
       box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
       border-radius: 0.25rem;
+      max-width: 345px;
+      max-height: 258.75px;
     }
     .profile-image img{
       position: absolute;
