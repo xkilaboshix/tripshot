@@ -8,12 +8,14 @@ Rails.application.routes.draw do
   get '/search/tag', to: 'searchs#search_tag', as: 'search_tag'
   patch '/users/:id/withdraw' => 'users#switch', as: 'withdraw_switch_user' #会員ステータスの切替
   
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update] do
+    resources :favorites, only: [:index]
+  end
   resources :posts do
     resources :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
-  resources :favorites, only: [:index]
+  
   resources :lists, except: [:index]
   resources :rooms, except: [:new, :edit, :update]
   resources :user_rooms, only: [:create]
