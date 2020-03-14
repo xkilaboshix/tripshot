@@ -606,7 +606,7 @@ a:hover {
 // 投稿の画像プレビュー
   #img_field {
     border-radius: 5px;
-    width: 400px;
+    max-width: 400px;
     height: auto;
     max-height: 300px;
     background-position: center;
@@ -728,7 +728,7 @@ a:hover {
 
     #img_field {
       border-radius: 5px;
-      width: 345px;
+      max-width: 345px;
       height: auto;
       max-height: 258.75px;
       background-position: center;
