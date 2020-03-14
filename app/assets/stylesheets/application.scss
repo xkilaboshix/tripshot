@@ -603,7 +603,7 @@ a:hover {
   #img_field {
     border-radius: 5px;
     width: 400px;
-    height: 250px;
+    height: auto;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -723,8 +723,8 @@ a:hover {
 
     #img_field {
       border-radius: 5px;
-      width: 350px;
-      height: 218px;
+      width: 345px;
+      height: auto;
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
