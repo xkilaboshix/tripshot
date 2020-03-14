@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'homes#top'
+  get '/favorites' => 'favorites#index', as: 'users_favorites'
   get '/users/:id/withdraw' => 'users#withdraw', as: 'withdraw_user' #退会画面への遷移
   get '/search', to: 'searchs#search', as: 'search' # 名前検索機能
   get '/search/list', to: 'searchs#search_list', as: 'search_list'
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
-  resources :favorites, only: [:index]
+  # resources :favorites, only: [:index]
   resources :lists, except: [:index]
   resources :rooms, except: [:new, :edit, :update]
   resources :user_rooms, only: [:create]
