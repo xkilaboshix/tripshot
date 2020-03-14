@@ -14,7 +14,9 @@
         <%= f.text_area :body, class: "form-control", placeholder: "任意項目です" %>
         <%= f.hidden_field :list_id, :value => params[:list_id] %>
       </div>
-      <%= f.submit "投稿", class: "btn btn-outline-primary offset-4 col-3" %>
+      <%= f.submit "投稿", class: "btn btn-outline-primary offset-4 col-3", style: "
+    margin-bottom: 56px;
+" %>
     <% end %>
   </div>
 </div>
