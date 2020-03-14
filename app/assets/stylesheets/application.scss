@@ -676,12 +676,17 @@ a:hover {
       text-align: center;
       display: inline-flex;
     }
+
+    
     
     .post-image img {
       width: 100%;
       height: auto;
       box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
       border-radius: 0.25rem;
+      object-fit: cover;
+      max-height: 258.75px;
+      max-width: 345px;
     }
     .profile-image img{
       position: absolute;
