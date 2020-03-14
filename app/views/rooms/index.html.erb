@@ -35,7 +35,7 @@
             <td><%= room.user_rooms.count %></td>
             <td>
               <% if room.owner_id == current_user.id %>
-                <%= link_to "削除", room_path(room), method: :delete, class: "btn btn-danger" %>
+                <%= link_to "削除", room_path(room), method: :delete, class: "btn btn-danger", data: { confirm: '削除しますか？' } %>
               <% end %>
             </td>
           </tr>
