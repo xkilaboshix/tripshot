@@ -78,7 +78,7 @@ class PostsController < ApplicationController
 
     favorite_ranks.each do |post|
       if post.created_at > past_date
-        week_rank.push{ Post.where(created_at: post.created_at) }
+        week_rank += Post.where(created_at: post.created_at)
       end
     end  
     return  week_rank
