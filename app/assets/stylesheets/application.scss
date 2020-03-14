@@ -589,6 +589,10 @@ a:hover {
   min-width: 321px;
 }
 
+.all_area {
+  margin-bottom: 20px;
+}
+
 // search関連scss
 .search-user_table {
   margin-bottom: 70px;
@@ -767,6 +771,11 @@ a:hover {
     .rank_image img {
       height: 48px;
       width: 48px
+    }
+    
+    // relationshipのindex
+    .all_area {
+      margin-bottom: 0px;
     }
 
   }
