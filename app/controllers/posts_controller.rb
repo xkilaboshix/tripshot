@@ -73,12 +73,12 @@ class PostsController < ApplicationController
     past_date = today - 7
     
     # 全てのお気に入りランキングをとってくる
-    favorite_ranks = Post.find(Favorite.group(:post_id).order('count(post_id) desc').pluck(:post_id))
+    favorite_ranks = Post.where(id: Favorite.group(:post_id).order('count(post_id) desc').pluck(:post_id))
     week_rank = []
 
     favorite_ranks.each do |post|
       if post.created_at > past_date
-        week_rank += Post.where(created_at: post.created_at)
+        week_rank.push{ Post.where(created_at: post.created_at) }
       end
     end  
     return  week_rank
