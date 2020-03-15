@@ -1,0 +1,43 @@
+<div class="container mt-4" style="margin-bottom:60px;">
+  <div class="d-flex justify-content-center">
+    <div class="d-flex flex-column">
+      <h3 class="text_white">プロフィール編集</h3>
+      <% if @user.errors.any? %>
+        <div id="error_explanation" class="alert alert-danger">
+          <h2><%= pluralize(@user.errors.count, "つのエラー") %> により登録ができません:</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <%= form_for(@user) do |f| %>
+        <div class="form-group">
+          <%= f.label :名前・ニックネーム, class: "brown-border" %>
+          <%= f.text_field :name, class: "form-control", placeholder: "8文字以下"%>  
+        </div>
+        <div class="form-group">
+          <%= f.label :メールアドレス, class: "brown-border" %>
+          <%= f.email_field :email, class: "form-control"%>
+        </div>
+        <div class="form-group">
+          <%= f.label :プロフィール, class: "brown-border" %>
+          <%= f.text_area :introduction, class: "form-control"%>
+        </div>
+        <div class="post-image-group">
+          <%= f.label :プロフィール画像, class: "brown-border" %><br>
+          <%= f.attachment_field :profile_image %>
+        </div>
+        <div class="post-image-group">
+          <%= f.label :背景画像, class: "brown-border" %><br>
+          <%= f.attachment_field :background_image %>
+        </div>
+        <div class="row dflex justify-content-around">
+          <%= f.submit "編集内容を保存する", class: "btn btn-outline-primary mt-3" %>
+          <%= link_to "退会する" , withdraw_user_path(@user), class: "btn btn-danger mt-auto" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

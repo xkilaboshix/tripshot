@@ -1,0 +1,26 @@
+<div class="message">
+  <% if current_user.id != message.user_id %>
+    <div class="yourcomment">
+      <div class="profile-image_chat">
+        <%= link_to user_path(message.user) do %>
+          <%= attachment_image_tag message.user, :profile_image, :fill, 50, 50,fallback: "no_image.jpg", size:'50x50' %>
+        <% end %>
+      </div>
+      <div class="chat-area">
+        <div class="user-name">
+          <%= message.user.name %>
+        </div>
+        <div class="speak">
+          <%= message.message %>
+        </div>
+      </div>
+    </div>
+  <% else %>
+  <div class="mycomment">
+    <p>
+      <%= message.message %>
+    </p>
+  </div>
+  <% end %>
+</div>
+  

@@ -1,0 +1,8 @@
+ <% if post_comment.errors %>
+  <% post_comment.errors.full_messages.each do |msg| %>
+    <li class="alert alert-danger">
+      <%= msg %>
+    </li>
+  <% end %>
+<% end %>
+

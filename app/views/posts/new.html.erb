@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-center">
+    <%= form_with(model: @post, local: true) do |f| %>
+      <h3 class="text_white">投稿作成</h3>
+      <div class="post-image-group">
+        <%= f.label :画像プレビュー, class: "px-3" %><br>
+        <div id="img_field">
+          <%= attachment_image_tag @post, :image, :fill, 345, 258.75 %>
+        </div>
+        <%= f.attachment_field :image, required: true, class: "image", id: "file" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :内容（任意項目）%>
+        <%= f.text_area :body, class: "form-control", placeholder: "任意項目です" %>
+        <%= f.hidden_field :list_id, :value => params[:list_id] %>
+      </div>
+      <%= f.submit "投稿", class: "btn btn-outline-primary offset-4 col-3", style: "
+    margin-bottom: 56px;
+" %>
+    <% end %>
+  </div>
+</div>

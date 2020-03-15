@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="d-flex justify-content-around mt-5">
+    <table class="table search-user_table">
+      <% @users.each do |user| %>
+        <tbody>
+          <tr>
+            <td class="profile-image_follow" style="width:20%;">
+              <%= link_to user_path(user) do %>
+                <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60'%>
+              <% end %><br>　
+              <%= user.name%><br>
+              <%= render partial: "users/follow_button", locals: { user: user } %>
+            </td>
+            <td style="width:80%;"><%= user.introduction %></td>
+          </tr>
+        </tbody>
+      <% end %>
+    </table>
+  </div>
+</div>

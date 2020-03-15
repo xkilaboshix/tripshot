@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="all_area">
+      <ul class="tab_area">
+        <li id="tab1" class="select">フォロー中</li>
+        <li id="tab2">フォロワー</li>
+      </ul> 
+      <div class="content_area" id="area1">
+        <div class="table-responsive">
+          <table class="table">
+            <% @followings.each do |user| %>
+              <tbody>
+                <tr>
+                  <td class="profile-image_follow" style="width:20%;">
+                    <%= link_to user_path(user) do %>
+                      <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60'%>
+                    <% end %><br>　
+                    <%= user.name%>
+                    <%= render partial: "users/follow_button", locals: { user: user } %>
+                  </td>
+                  <td style="width:80%;"><%= user.introduction %></td>
+                </tr>
+              </tbody>
+            <% end %>
+          </table>
+        </div>
+      </div>
+      <div class="content_area hide" id="area2">
+        <div class="">
+          <table class="table">
+            <% @followers.each do |user| %>
+              <tbody>
+                <tr>
+                  <td class="profile-image_follow" style="width:20%;">
+                    <%= link_to user_path(user) do %>
+                      <%= attachment_image_tag user, :profile_image, :fill, 60, 60,fallback: "no_image.jpg", size:'60x60'%>
+                    <% end %><br>　
+                      <%= user.name%>
+                      <%= render partial: "users/follow_button", locals: { user: user } %>
+                  </td>
+                  <td style="width:80%;"><%= user.introduction %></td>
+                </tr>
+              </tbody>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

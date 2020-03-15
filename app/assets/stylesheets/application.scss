@@ -1,0 +1,784 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+ @import "tagsinput";
+ @import "font-awesome";
+
+html {
+  overflow: auto;
+}
+
+ body {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Hiragino Kaku Gothic ProN', YuGothic, 'Yu Gothic Medium', Meiryo, sans-serif; 
+}
+
+ main {
+  background-image: image-url('water.jpeg');
+   /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+  
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+  
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+  
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+  
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: #464646;
+  width: 100%;
+  
+  min-height: calc(100vh - 56px);
+ }
+
+ .text_white {
+  color: floralwhite;
+  text-shadow: -2px 2px 5px black;
+ }
+
+
+ // フッター最下部固定
+
+footer {
+  z-index: 9999;
+  position: fixed;
+  margin-top: auto;
+  width: 100%;
+  bottom: 0;
+}
+
+// ページネーション中央寄せ
+.pagination {
+  justify-content: center;
+}
+
+// 投稿画像
+.post-image img {
+  border-radius: 0.25rem;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+}
+
+// いいねの色、大きさ
+.fav {
+  color: red;
+  font-size: 30px;
+}
+
+.heart-count {
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+// ハートに影
+.fa-heart:before {
+  filter: drop-shadow(2px 2px 2px rgba(255, 144, 235, 0.8));
+}
+
+// バッジに影を付与
+.badge {
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+}
+
+// top背景画像
+.top {
+  background-image: image-url('tripshot_top.jpeg');
+  /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+  
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+  
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+  
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  background-size: cover;
+  
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: #464646;
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+}
+
+.top-page-top {
+  min-height: calc(100vh - 112px);
+}
+// トップページ
+
+h4.top-title {
+  font-size: 50px;
+  font-family: Impact,Charcoal;
+  background: image-url('wood.jpeg');
+  // 背景が前景のテキストで切り取られる
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+p.top-introduction {
+  font-size: x-large;
+  font-family: Impact,Charcoal;
+  border-top: inset 2px white;
+  border-bottom: inset 2px white;
+  max-width: 800px;
+  margin: 0 auto;
+  color: floralwhite;
+  text-shadow: -2px 2px 5px black;
+}
+
+// user view関連のscss
+.list{
+  background-color: #E5FAF8;
+  border-radius: 10px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+.list p{
+  margin: auto 0;
+  line-height:50px ;
+  font-size: 18px;
+}
+
+.btn-success {
+  height: 38px;
+}
+
+
+// マイページ背景画像とプロフィール画像(users#show)
+.profile li {
+  position: relative;
+  list-style: none;
+}
+
+.login-alert {
+  position: absolute;
+  top: 7%;
+  left: calc(50% - 108px);
+}
+
+.profile p {
+  position: absolute;
+  top: 17%;
+  left: calc(50% - 60px);
+}
+
+.profile_image{
+  position: relative;
+}
+
+.edit_user_btn {
+  min-width: 109px;
+}
+
+.follow_user_btn {
+  min-width: 109px;
+}
+
+.my_name {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;
+  padding:0;
+  font-weight: bold;
+  white-space: nowrap;
+  text-shadow: -2px 2px 5px white;
+}
+
+.follow_button {
+  position: absolute;
+  top: 48%;
+  left: 51%;
+}
+
+
+.follow_link {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.fav_edit_link {
+  position: absolute;
+  top: 51%;
+  left: 79%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  display: inline-flex;
+}
+
+.favorite_link {
+  margin-right: 5px;
+}
+
+.follow {
+  position: absolute;
+  top: 48%;
+  left: 30%;
+}
+
+.introduction {
+  position: absolute;
+  top: 55%;
+  left: 15%;
+  width: 70%;
+  height: auto;
+  min-height: 120px;
+  padding: 12px;
+  border-radius: 10px;
+  background-color:#E5FAF8;
+  word-break: break-all;
+}
+
+.trip-list {
+  min-height: 74px;
+  min-width: 321px;
+}
+
+.background_image { 
+  max-width: 100%;
+}
+.profile_image img {
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+}
+
+// tabのCSS
+.tab_area {
+  overflow: hidden;
+  display: table;
+  margin: 0;
+}
+
+.tab_area li {
+  /*Tabの装飾*/
+  width: 139px;
+  height: 49px;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: middle;
+  display: table-cell;
+  color: black;
+  border-bottom: 1px dotted #bbbbbb;
+  // ゆっくりと色を変える
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+// マウスを乗せたときに背景の色を変える
+.tab_area li:hover {
+  background-color: rgb(15, 91, 206);
+}
+
+.all_area {
+  padding: 10px;
+  overflow: hidden;
+}
+.all_area div.content_area {
+  padding: 10px 10px 10px 2px;
+  
+}
+
+.tab_area li.select {
+  background-image: none;
+  color: #11e234;
+  border-bottom: 2px solid #11e234;
+}
+  
+.hide {
+  display: none;
+}
+
+
+// 退会画面
+h1.red-border {
+  padding-top: 40px;
+}
+.withdraw-text {
+  padding-top: 60px;
+}
+
+// リンクのCSS
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  text-decoration: none;
+}
+
+// チャットのレイアウト
+.chat {
+  padding: 0;
+  margin: 0;
+}
+
+// post view関連のscss
+.post_index {
+  margin-top: 25px;
+  margin-bottom: 75px;
+}
+
+.post-image{
+  position: relative;
+  max-width: 400px;
+  margin-bottom: 10px;
+}
+
+// いいねの位置を画像の中に
+.post-image p.like {
+  position: absolute;
+  bottom: -14px;
+  right: 10px;
+}
+
+.tag {
+  position: absolute;
+  bottom: 5%;
+  left: 5%
+}
+
+.rank_image {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: #f8f9fa1a;
+}
+
+.post-content {
+  max-width: 400px;
+  margin-bottom: 75px;
+}
+
+.post-comments {
+  min-width: 350px;
+}
+
+.list-content {
+  width: 400px;
+}
+
+.no_rank {
+  height: 258px;
+  width: 345px;
+  background-color: #E5FAF8;
+  border-radius: 0.25rem;
+  padding: 12px;
+  text-align: center;
+}
+
+.no_rank_text {
+  padding-top: 50px;
+  line-height: 50px;
+  font-size: x-large;
+}
+
+// post_showの投稿画像
+.image img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+  border-radius: 0.25rem;
+}
+
+.profile-image img{
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+}
+
+// コメントのプロフィール画像
+.profile-image_comment img { 
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+}
+
+.list_show {
+  border-radius: 0.25rem;
+  background-color: #E5FAF8;
+  margin-bottom: 30px;
+  max-width: 400px;
+}
+.list_show img {
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+}
+
+
+
+// list view関連のscss
+// 旅行リスト作成ページのフォーム
+
+.post-text-box{
+  padding-top: 80px;
+}
+
+.list-post{
+  margin: 20px 0;
+}
+
+.list-body {
+  background-color: #E5FAF8;
+  border-radius: 0.25rem;
+  max-width: 400px;
+  padding: 12px;
+  min-height: 86px;
+}
+
+.list-text-box {
+  margin-bottom: 60px;
+}
+
+
+
+// _messageデザイン
+.message-content {
+  padding: 0;
+  max-width: 450px;
+  margin: 15 auto;
+  text-align: right;
+  font-size: 14px;
+
+}
+
+.yourcomment {
+  width: 100%;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.yourcomment .profile-image_chat {
+  float: left;
+  margin-right: -50px;
+  width: 40px;
+}
+
+.yourcomment .profile-image_chat img{
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.yourcomment .chat-area {
+  width: 100%;
+  text-align: left;
+}
+
+.user-name {
+  padding-left: 55px;
+}
+
+.speak {
+  display: inline-block;
+  position: relative; 
+  margin: 0 0 0 50px;
+  padding: 10px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #edf1ee;
+}
+
+.speak:after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 3px; 
+  left: -19px;
+  border: 8px solid transparent;
+  border-right: 18px solid #edf1ee;
+  -webkit-transform: rotate(35deg);
+  transform: rotate(35deg);
+}
+.speak p {
+  margin: 0;
+  padding: 0;
+}
+
+.mycomment {
+  margin: 10px 0;
+}
+.mycomment p {
+  display: inline-block;
+  position: relative; 
+  margin: 0 10px 0 0;
+  padding: 8px;
+  max-width: 250px;
+  border-radius: 12px;
+  background: #30e852;
+  font-size: 15px;
+  text-align: start;
+}
+
+.mycomment p:after {
+  content: "";
+  position: absolute;
+  top: 3px; 
+  right: -19px;
+  border: 8px solid transparent;
+  border-left: 18px solid #30e852;
+  -webkit-transform: rotate(-35deg);
+  transform: rotate(-35deg);
+}
+
+// chat view関連
+.chat-form {
+  position: fixed;
+  bottom: 70px;
+  right: 100px
+}
+
+#messages {
+  margin-bottom: 120px;
+}
+
+.room-name {
+  position: fixed;
+  top: 80px;
+  z-index: 1;
+}
+
+#messages {
+  margin-top: 80px;
+}
+
+// relationship関連scss
+.profile-image_follow img {
+  box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+}
+
+.list-group-item img {
+  border-radius: 50%;
+}
+
+.list-group-item {
+  min-width: 321px;
+}
+
+.all_area {
+  margin-bottom: 20px;
+}
+
+// search関連scss
+.search-user_table {
+  margin-bottom: 70px;
+}
+
+// デフォルトは非表示 幅600pxより大きいとき
+.phone_area {
+  display:none;
+}
+
+// 投稿の画像プレビュー
+  #img_field {
+    border-radius: 5px;
+    max-width: 400px;
+    height: auto;
+    max-height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #fff;
+    overflow: hidden;
+  }
+
+  // favoriteページ
+  .favorite_index {
+    margin-top: 10px;
+    margin-bottom: 65px;
+  }
+
+  .search_tag {
+    margin-bottom: 55px;
+  }
+
+
+  @media screen and (max-width: 600px) {
+    
+    // noneクラスをもつ要素は幅600px以下で消える
+    // appearで現れる
+    .none {display:none}
+    .appear {display:block;}
+    
+    // トップページ
+    .top-page-top {
+      min-height: calc(100vh - 56px);
+    }
+    
+    // マイページ背景画像とプロフィール画像(users#show)
+    .my_name {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      -ms-transform: translate(-50%,-50%);
+      -webkit-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      margin:0;
+      padding:0;
+      font-weight: bold;
+      text-shadow: -2px 2px 5px white;
+    }
+
+    .profile {
+      padding: 0;
+    }
+
+    .follow_link {
+      position: absolute;
+      top: 43%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .fav_edit_link {
+      position: absolute;
+      top: 51%;
+      left: 70%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+      display: inline-flex;
+    }
+
+    
+    
+    .post-image img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.8);
+      border-radius: 0.25rem;
+      object-fit: cover;
+      max-height: 258.75px;
+      max-width: 345px;
+    }
+    .profile-image img{
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      border-radius: 50%;
+      width: 60px;
+    }
+
+    .lists {
+      min-height: 100vh;
+    }
+
+    // chat関連
+    .chat-btn {
+      margin-bottom: 17px;
+    }
+  
+    .chat-form {
+      position: fixed;
+      bottom: 10px;
+      z-index: 1;
+    }
+  
+    .room-title_index {
+      font-size: x-large;
+    }
+    
+    // post関連
+    .post_index {
+      margin-top: 25px;
+      margin-bottom: 0px;
+    }
+
+    #img_field {
+      border-radius: 5px;
+      max-width: 345px;
+      height: auto;
+      max-height: 258.75px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    p.top-introduction {
+      font-size: large;
+      font-family: Impact,Charcoal;
+    }
+    
+    .post-image {
+      position: relative;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    // 投稿一覧とお気に入りの隙間
+    .posts {
+      margin-top: 40px;
+    }
+    
+    // favoriteページ
+    .favorite_index {
+      margin-top: 30px;
+      margin-bottom: 0px;
+    }
+    // list関連
+    .post-content {
+      max-width: 400px;
+      margin-bottom: 0px;
+    }
+    // search_tagページ
+    .search_tag {
+      margin-bottom: 24px;
+    }
+
+    .rank_image img {
+      height: 48px;
+      width: 48px
+    }
+    
+    // relationshipのindex
+    .all_area {
+      margin-bottom: 0px;
+    }
+
+  }
+
+  
+  

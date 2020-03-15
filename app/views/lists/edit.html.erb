@@ -1,0 +1,40 @@
+<div class="container">
+  <% if @list.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@list.errors.count, "つのエラー") %> により投稿ができません:</h2>
+      <ul>
+        <% @list.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="d-flex justify-content-center list-text-box mt-5">
+    <%= form_with(model: @list, local: true) do |f| %>
+      <h3 class="text_white">旅行リスト編集ページ</h3>
+      <div class="form-group">
+        <%= f.label :旅行タイトル%>
+        <%= f.text_field :title, class: "form-control", placeholder: "1文字以上75文字以下" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :内容（任意項目）%>
+        <%= f.text_area :body, class: "form-control", placeholder: "任意項目です" %>
+      </div>
+      <div class="form-group">
+          <%= f.label :日程入力（任意項目）%>
+        <div class="d-flex flex-row">
+          <%= f.date_field :departure_date, class: 'form-control col-6', placeholder: "出発日 例）2020/01/01" %> 
+          <%= f.date_field :return_date, class: 'form-control col-6', placeholder: "帰宅日 例）2020/01/03" %>           
+        </div>
+        <div class="form-group">
+          <%= f.label :tag_list %>
+          <%= f.text_field :tag_list, value: @list.tag_list.join(','), class: "form-control", data: {role: "tagsinput"} %>
+        </div>
+      </div>
+      <div class="d-flex flex-row">    
+        <%= f.submit "編集内容を保存", class: "btn btn-outline-primary col-5" %> 
+        <%= link_to "リストを削除", list_path(@list), method: :delete, class: "btn btn-outline-danger offset-2 col-5", data: { confirm: '削除しますか？' } %>
+      </div>
+    <% end %>
+  </div> 
+</div>
