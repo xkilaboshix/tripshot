@@ -1,5 +1,5 @@
 <div class="container lists-show">
-  <div class="row">
+  <div class="row" style="margin: 25px auto 0 auto;">
     <div class="comment col-md-6 mt-3">
        <% if @list.user_id == current_user.id %>
         <%= link_to "新規投稿", new_post_path(list_id: @list), class:"btn btn-success mb-3" %>
