@@ -33,7 +33,7 @@ before_action :correct_user, except: [:show]
 
   private
   def user_params
-    params.require(:user).permit(:is_enabled, :name, :profile_image, :background_image, :introduction)
+    params.require(:user).permit(:is_enabled, :name, :profile_image, :background_image, :introduction, :email)
   end
 
   def correct_user
