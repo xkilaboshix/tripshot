@@ -228,14 +228,13 @@ p.top-introduction {
 .fav_edit_link {
   position: absolute;
   top: 51%;
-  left: 79%;
+  left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   margin: 0;
   padding: 0;
   width: 100%;
   text-align: center;
-  display: inline-flex;
 }
 
 .favorite_link {
@@ -672,14 +671,13 @@ a:hover {
     .fav_edit_link {
       position: absolute;
       top: 51%;
-      left: 70%;
+      left: 50%;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       margin: 0;
       padding: 0;
       width: 100%;
       text-align: center;
-      display: inline-flex;
     }
 
     
