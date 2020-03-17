@@ -392,8 +392,8 @@ a:hover {
 }
 
 .no_rank {
-  height: 258px;
-  width: 345px;
+  height: 300px;
+  width: 400px;
   background-color: #E5FAF8;
   border-radius: 0.25rem;
   padding: 12px;
@@ -749,6 +749,17 @@ a:hover {
       max-width: 345px;
       margin-bottom: 30px;
     }
+    // ランキングない場合の表示
+    .no_rank {
+      height: 258.75px;
+      width: 100%;
+      max-width: 345px;
+      background-color: #E5FAF8;
+      border-radius: 0.25rem;
+      padding: 12px;
+      text-align: center;
+    }
+
     // 投稿一覧とお気に入りの隙間
     .posts {
       margin-top: 40px;
