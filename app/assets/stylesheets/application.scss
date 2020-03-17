@@ -746,6 +746,7 @@ a:hover {
     .post-image {
       position: relative;
       width: 100%;
+      max-width: 345px;
       margin-bottom: 30px;
     }
     // 投稿一覧とお気に入りの隙間
