@@ -1,7 +1,7 @@
 <div class="container post_index">
-  <div class="row">
+  <div class="row" style="margin: 25px auto 0 auto;">
     <div class="col-md-6">
-      <h3 class="text_white">週間お気に入りランキング</h3>
+      <h3 class="text_white">週間ランキング</h3>
       <% if @favorite_ranks.present? %>
         <% @favorite_ranks.each do |post| %>
           <div class="post-image">
@@ -28,7 +28,7 @@
         <% end %>
       <% else %>
         <div class="no_rank">
-          <p class="no_rank_text">該当なし<br>新しい投稿にいいねしよう！</p>
+          <p class="no_rank_text">該当なし<br>投稿にいいねしよう！</p>
         </div>
       <% end %>
     </div>

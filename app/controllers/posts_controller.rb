@@ -69,8 +69,9 @@ class PostsController < ApplicationController
     # 一週間のお気に入りランキングを計算
   def week_post_calculate
 
-    # 全てのお気に入りランキングをとってくる
+    # 一週間以内の投稿をとってくる
     posts = Post.where("created_at > ?", 7.days.ago)
+    # お気に入りの多い順に並べてidをとる
     post_ids = Favorite.where(post_id: posts.pluck(:id)).group(:post_id).order('count(post_id) DESC').pluck(:post_id)
     post_ranks_ids = post_ids.first(3)
 
