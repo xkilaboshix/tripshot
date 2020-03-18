@@ -13,7 +13,9 @@
       </p>
     </div>
     <div class="top-link">
-      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success w-25" %>
+      <% unless user_signed_in? %>
+        <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-success w-25" %>
+      <% end %>
     </div> 
   </div> 
 </div>
