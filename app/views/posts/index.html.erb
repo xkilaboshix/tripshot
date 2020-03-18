@@ -1,5 +1,10 @@
 <div class="container post_index">
-  <div class="row" style="margin: 25px auto 0 auto;">
+  <div class="row" style="margin: 55px auto 0 auto;">
+    <% if flash[:notice] %>
+      <div class="alert alert-success login-alert mt-2">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <div class="col-md-6">
       <h3 class="text_white">週間ランキング</h3>
       <% if @favorite_ranks.present? %>
