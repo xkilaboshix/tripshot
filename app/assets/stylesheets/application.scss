@@ -171,7 +171,9 @@ p.top-introduction {
 .login-alert {
   position: absolute;
   top: 7%;
-  left: calc(50% - 141px);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .profile p {
