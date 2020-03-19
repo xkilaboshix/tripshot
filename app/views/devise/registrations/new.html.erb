@@ -10,11 +10,11 @@
         <%= render "devise/shared/error_messages", resource: resource %>
         <div class="form-group">
           <%= f.label :お名前・ニックネーム, class: "brown-border px-3" %>
-            <%= f.text_field :name, placeholder:"この名前はユーザーに公開されます", class: "form-control  col-md-11" %>
+            <%= f.text_field :name, placeholder:"8文字以内で入力して下さい。", class: "form-control  col-md-11" %>
         </div>
         <div class="form-group">
           <%= f.label :メールアドレス, class: "brown-border px-3" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"例）example@mail", class:   "form-control col-md-11" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"例）example@mail.com", class:   "form-control col-md-11" %>
         </div>
         <div class="form-group">
           <%= f.label :パスワード, class: "brown-border px-3" %>
@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
           <%= f.label :パスワード確認, class: "brown-border px-3" %>
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control col-md-11" %>
+          <%= f.password_field :password_confirmation, placeholder:"パスワードを入力してください。", autocomplete: "new-password", class: "form-control col-md-11" %>
         </div>
         <div class="row">
           <%= f.submit "会員登録", class: "btn btn-lg btn-primary mx-auto" %>
