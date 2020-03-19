@@ -10,14 +10,8 @@ class PostsController < ApplicationController
       @second_rank = week_post_calculate[1]
       @third_rank = week_post_calculate[2]
 
-    if request.from_pc? 
-      @posts = Post.page(params[:page]).per(3).reverse_order
+      @posts = Post.page(params[:page]).per(10).reverse_order
       @favorite_ranks = week_post_calculate
-    else
-      @posts = Post.all.reverse_order
-      @favorite_ranks = week_post_calculate
-    end
-
   end
 
   def create

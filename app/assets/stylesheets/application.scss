@@ -28,6 +28,10 @@ html {
   font-family: 'Helvetica Neue', 'Helvetica', 'Hiragino Kaku Gothic ProN', YuGothic, 'Yu Gothic Medium', Meiryo, sans-serif; 
 }
 
+.pagination {
+  display: none;
+}
+
  main {
   background-image: image-url('water.jpeg');
    /* 画像を常に天地左右の中央に配置 */
