@@ -1,10 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-    if request.from_pc?
-      @favorites = Favorite.where(user_id: params[:user_id]).page(params[:page]).reverse_order
-    else
-      @favorites = Favorite.where(user_id: params[:user_id]).reverse_order
-    end
+      @favorites = Favorite.where(user_id: params[:user_id]).page(params[:page]).per(9).reverse_order
   end
 
   def create
