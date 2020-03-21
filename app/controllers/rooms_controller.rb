@@ -4,7 +4,9 @@ class RoomsController < ApplicationController
   def index
     @room = Room.new
     @rooms = Room.all
+    @user_room = UserRoom.new
   end
+
   def create
     @room = Room.new(room_params)
     @room.owner_id = current_user.id
@@ -15,11 +17,13 @@ class RoomsController < ApplicationController
       render :index
     end
   end
+
   def show
     @room = Room.find(params[:id])
     # 最新のメッセージ300件まで取得
     @messages = Chat.where(room_id: @room.id).last(300)
   end
+  
   def destroy
     @room = Room.find(params[:id])
     @room.destroy

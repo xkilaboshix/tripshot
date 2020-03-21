@@ -6,12 +6,12 @@ class PostsController < ApplicationController
   end
 
   def index
-      @first_rank = week_post_calculate[0]
-      @second_rank = week_post_calculate[1]
-      @third_rank = week_post_calculate[2]
+    @first_rank = week_post_calculate[0]
+    @second_rank = week_post_calculate[1]
+    @third_rank = week_post_calculate[2]
 
-      @posts = Post.page(params[:page]).per(9).reverse_order
-      @favorite_ranks = week_post_calculate
+    @posts = Post.page(params[:page]).per(9).reverse_order
+    @favorite_ranks = week_post_calculate
   end
 
   def create

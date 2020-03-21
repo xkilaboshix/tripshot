@@ -31,7 +31,13 @@
         <% @rooms.each_with_index do |room, i| %>
           <tr>
             <th scope="row"><%= i + 1 %></th>
-            <td><%= link_to room.name, user_rooms_path(room_id: room.id), method: :post, data: {"turbolinks" => false} %></td>
+            <td>
+              <%= form_with(model: @user_room, url: user_rooms_path, local: true) do |f| %>
+                <%= f.hidden_field :room_id, :value => room.id %>
+                <%= f.hidden_field :user_id, :value => current_user.id %>
+                <%= f.submit room.name %>
+              <% end %>
+            </td>
             <td><%= room.user_rooms.count %></td>
             <td>
               <% if room.owner_id == current_user.id %>
