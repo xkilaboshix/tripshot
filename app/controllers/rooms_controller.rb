@@ -4,6 +4,7 @@ class RoomsController < ApplicationController
   def index
     @room = Room.new
     @rooms = Room.all
+    @user_room = UserRoom.new
   end
   def create
     @room = Room.new(room_params)
