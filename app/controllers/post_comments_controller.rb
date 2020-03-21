@@ -1,4 +1,5 @@
 class PostCommentsController < ApplicationController
+  
   def create 
     @post_comment = PostComment.new(post_comment_params)
     @post_comment.user_id = current_user.id

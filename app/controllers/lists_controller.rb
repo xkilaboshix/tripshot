@@ -4,6 +4,7 @@ before_action :correct_user, only: [:edit, :update, :destroy]
   def new
     @list = List.new
   end
+
   def create
     @list = List.new(list_params)
     @list.user = current_user
@@ -16,6 +17,7 @@ before_action :correct_user, only: [:edit, :update, :destroy]
       render :new
     end
   end
+
   def show
     @list = List.find(params[:id])
     if request.from_pc?
@@ -28,6 +30,7 @@ before_action :correct_user, only: [:edit, :update, :destroy]
   def edit
     @list = List.find(params[:id])
   end
+
   def update
     @list = List.find(params[:id])
     if @list.update(list_params)
@@ -36,6 +39,7 @@ before_action :correct_user, only: [:edit, :update, :destroy]
       render 'edit'
     end
   end
+  
   def destroy
     @list = List.find(params[:id])
     if @list.destroy
