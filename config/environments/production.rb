@@ -44,7 +44,7 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
-  # config.action_cable.allowed_request_origins = [ 'http://tripshot.work/', /http:\/\/tripshot.*/ ]
+  config.action_cable.allowed_request_origins = [ 'http://tripshot.work/', /http:\/\/tripshot.*/ ]
 
   #ActionCableデプロイ設定
   config.action_cable.allowed_request_origins = [ 'http://3.113.190.234/' ]
