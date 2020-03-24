@@ -35,7 +35,7 @@
               <%= form_with(model: @user_room, url: user_rooms_path, local: true) do |f| %>
                 <%= f.hidden_field :room_id, :value => room.id %>
                 <%= f.hidden_field :user_id, :value => current_user.id %>
-                <%= f.submit room.name %>
+                <%= f.submit room.name, class:"btn-sm btn-info" %>
               <% end %>
             </td>
             <td><%= room.user_rooms.count %></td>
