@@ -26,12 +26,12 @@
           <%= f.text_area :introduction, class: "form-control"%>
         </div>
         <div class="post-image-group">
-          <%= f.label :プロフィール画像, class: "brown-border" %><br>
-          <%= f.attachment_field :profile_image %>
+          <%= f.label :プロフィール画像, class: "brown-border" %>
+          <div><%= f.attachment_field :profile_image %></div>
         </div>
         <div class="post-image-group">
-          <%= f.label :背景画像, class: "brown-border" %><br>
-          <%= f.attachment_field :background_image %>
+          <%= f.label :背景画像, class: "brown-border" %>
+         <div> <%= f.attachment_field :background_image %></div>
         </div>
         <div class="row dflex justify-content-around">
           <%= f.submit "編集内容を保存する", class: "btn btn-outline-primary mt-3" %>

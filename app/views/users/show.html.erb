@@ -46,7 +46,8 @@
             <% if list.departure_date && list.return_date %>
               <%= link_to list_path(list) do %>
                 <li class=" trip-list list-group-item list-group-item-primary">
-                  <%= list.title %><br>出発：<%= list.departure_date %>　帰宅：<%= list.return_date %>
+                  <%= list.title %>
+                  <div>出発：<%= list.departure_date %>　帰宅：<%= list.return_date %></div>
                 </li>
               <% end %>
             <% else %>
