@@ -14,8 +14,8 @@
                   <td class="profile-image_follow" style="width:20%;">
                     <%= link_to user_path(user) do %>
                       <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60'%>
-                    <% end %><br>　
-                    <%= user.name%>
+                    <% end %>
+                    <div>　<%= user.name%></div>
                     <%= render partial: "users/follow_button", locals: { user: user } %>
                   </td>
                   <td style="width:80%;"><%= user.introduction %></td>
@@ -34,9 +34,9 @@
                   <td class="profile-image_follow" style="width:20%;">
                     <%= link_to user_path(user) do %>
                       <%= attachment_image_tag user, :profile_image, :fill, 60, 60,fallback: "no_image.jpg", size:'60x60'%>
-                    <% end %><br>　
-                      <%= user.name%>
-                      <%= render partial: "users/follow_button", locals: { user: user } %>
+                    <% end %>
+                    <div>　<%= user.name%></div>
+                    <%= render partial: "users/follow_button", locals: { user: user } %>
                   </td>
                   <td style="width:80%;"><%= user.introduction %></td>
                 </tr>
