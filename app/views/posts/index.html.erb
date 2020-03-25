@@ -39,31 +39,29 @@
     <% end %>
   </div>
   <h3 class="text_white" style="margin-top: 30px;">全ての投稿一覧</h3>
-  <div class="jscroll">
-    <div class="row posts" style="margin: 0 auto;">
-      <% @posts.each do |post| %>
-        <div class="col-md-4">
-          <div class="post-image">
-            <%= link_to post_path(post) do %>
-              <%= attachment_image_tag post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>
+  <div class="row posts" style="margin: 0 auto;">
+    <% @posts.each do |post| %>
+      <div class="col-md-4">
+        <div class="post-image">
+          <%= link_to post_path(post) do %>
+            <%= attachment_image_tag post, :image, :fill, 400, 300,fallback: "no_image.jpg", size:'400x300' %>
+          <% end %>
+          <div class="profile-image">
+            <%= link_to user_path(post.user) do %>
+              <%= attachment_image_tag post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
             <% end %>
-            <div class="profile-image">
-              <%= link_to user_path(post.user) do %>
-                <%= attachment_image_tag post.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
-              <% end %>
-            </div>
-            <div class="tag"> 
-              <% post.list.tag_list.each do |tag| %>
-                <span class="badge badge-info"><%= tag %></span>
-              <% end %>
-            </div>
-            <p class="fav_<%= post.id %> like">
-              <%= render 'posts/like', user: current_user, post: post %>
-            </p>
           </div>
+          <div class="tag"> 
+            <% post.list.tag_list.each do |tag| %>
+              <span class="badge badge-info"><%= tag %></span>
+            <% end %>
+          </div>
+          <p class="fav_<%= post.id %> like">
+            <%= render 'posts/like', user: current_user, post: post %>
+          </p>
         </div>
-      <% end %>
-      <%= paginate @posts %>
-    </div>  
-  </div>
+      </div>
+    <% end %>
+  </div> 
+  <%= paginate @posts %>
 </div>
