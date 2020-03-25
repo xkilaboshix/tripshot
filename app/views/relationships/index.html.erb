@@ -6,12 +6,12 @@
         <li id="tab2">フォロワー</li>
       </ul> 
       <div class="content_area" id="area1">
-        <div class="table-responsive users">
+        <div class="table-responsive">
           <%= render partial: "followings", locals: { followings: @followings }%>
         </div>
       </div>
       <div class="content_area hide" id="area2">
-        <div class="users">
+        <div class="table-responsive">
           <%= render partial: "followers", locals: { followers: @followers }%>
         </div>
       </div>
