@@ -42,9 +42,9 @@
       <p class="post-body"><%= @post.body %></p>
     </div>
     <div class="post-comments col-md-6">
-    <div id="result">
-      <%= render 'post_comments/error_message', post_comment: @post_comment %>
-    </div>
+      <div id="result">
+        <%= render 'post_comments/error_message', post_comment: @post_comment %>
+      </div>
       <h4 class="text_white">コメント</h4>
       <%= render 'comment', user: current_user, post: @post %>
       <div class="post_comment">
