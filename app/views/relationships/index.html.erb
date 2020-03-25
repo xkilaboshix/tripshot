@@ -6,43 +6,13 @@
         <li id="tab2">フォロワー</li>
       </ul> 
       <div class="content_area" id="area1">
-        <div class="table-responsive">
-          <table class="table">
-            <% @followings.each do |user| %>
-              <tbody>
-                <tr>
-                  <td class="profile-image_follow" style="width:20%;">
-                    <%= link_to user_path(user) do %>
-                      <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60'%>
-                    <% end %>
-                    <div>　<%= user.name%></div>
-                    <%= render partial: "users/follow_button", locals: { user: user } %>
-                  </td>
-                  <td style="width:80%;"><%= user.introduction %></td>
-                </tr>
-              </tbody>
-            <% end %>
-          </table>
+        <div class="table-responsive users">
+          <%= render partial: "followings", locals: { followings: @followings }%>
         </div>
       </div>
       <div class="content_area hide" id="area2">
-        <div class="">
-          <table class="table">
-            <% @followers.each do |user| %>
-              <tbody>
-                <tr>
-                  <td class="profile-image_follow" style="width:20%;">
-                    <%= link_to user_path(user) do %>
-                      <%= attachment_image_tag user, :profile_image, :fill, 60, 60,fallback: "no_image.jpg", size:'60x60'%>
-                    <% end %>
-                    <div>　<%= user.name%></div>
-                    <%= render partial: "users/follow_button", locals: { user: user } %>
-                  </td>
-                  <td style="width:80%;"><%= user.introduction %></td>
-                </tr>
-              </tbody>
-            <% end %>
-          </table>
+        <div class="users">
+          <%= render partial: "followers", locals: { followers: @followers }%>
         </div>
       </div>
     </div>
