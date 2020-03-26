@@ -6,8 +6,8 @@
           <%= link_to user_path(user) do %>
             <%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60'%>
           <% end %>
-          <div>　<%= user.name%></div>
-          <div id="follow_form_followings<%= user.id %>">
+          <div><%= user.name%></div>
+          <div id="follow_form<%= user.id %>">
             <%= render partial: "users/follow_button", locals: { user: user } %>
           </div>
         </td>
