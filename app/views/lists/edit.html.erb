@@ -13,7 +13,7 @@
     <%= form_with(model: @list, local: true) do |f| %>
       <h3 class="text_white">旅行リスト編集ページ</h3>
       <div class="form-group">
-        <%= f.label :旅行タイトル%>
+        <%= f.label :旅行タイトル（1字以上75字以下）%>
         <%= f.text_field :title, class: "form-control", placeholder: "1文字以上75文字以下" %>
       </div>
       <div class="form-group">
@@ -27,7 +27,7 @@
           <%= f.date_field :return_date, class: 'form-control col-6', placeholder: "帰宅日 例）2020/01/03" %>           
         </div>
         <div class="form-group">
-          <%= f.label :tag_list %>
+          <%= f.label :タグ（任意項目、3個まで） %>
           <%= f.text_field :tag_list, value: @list.tag_list.join(','), class: "form-control", data: {role: "tagsinput"} %>
         </div>
       </div>
