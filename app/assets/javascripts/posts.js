@@ -29,7 +29,7 @@ $(window).on("scroll", function() {
     //スクロールの位置が下部5%の範囲に来た場合
     $(".jscroll").jscroll({
       contentSelector: ".jscroll",
-      nextSelector: "a.page-link:last"
+      nextSelector: "a:last"
     });
   }
 });

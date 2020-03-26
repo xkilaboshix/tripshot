@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       @second_rank = week_post_calculate[1]
       @third_rank = week_post_calculate[2]
 
-      @posts = Post.page(params[:page]).per(10).reverse_order
+      @posts = Post.page(params[:page]).per(9).reverse_order
       @favorite_ranks = week_post_calculate
   end
 
