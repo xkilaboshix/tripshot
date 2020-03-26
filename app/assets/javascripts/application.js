@@ -15,7 +15,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= rewuire infinite-scroll.pkgd.min.js
+//= require infinite-scroll.pkgd.min.js
 //= require_tree .
 
 

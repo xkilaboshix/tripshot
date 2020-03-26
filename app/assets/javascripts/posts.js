@@ -24,8 +24,8 @@ $(function(){
 
 $(function(){
   $('.posts').infinitescroll({
-    navSelector  : 'ul.pagination',          // この部分をスクロールが通ったら、ページングを実施
-    nextSelector : 'a:last',
+    navSelector  : 'nav.pagination',          // この部分をスクロールが通ったら、ページングを実施
+    nextSelector : 'nav.pagination a[rel=next]',
     itemSelector : '.post-image' // 次のページへのリンク（自動に書き換える、例の中で一回使ったものが次はmy_url/3になる）      // my_urlから取ったhtmlのid=targetの部分のliだけ表示する
   });
 });
