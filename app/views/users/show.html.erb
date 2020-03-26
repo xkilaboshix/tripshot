@@ -26,7 +26,9 @@
             <% if @user.id == current_user.id %>
               <%= link_to "変更", edit_user_path(@user), class: "btn btn-secondary edit_user_btn" %>
             <% else %>
-              <%= render 'follow_button', user: @user %>
+              <div id="follow_form<%= @user.id %>">
+                <%= render 'follow_button', user: @user %>
+              </div>
             <% end %>
           </div>
           <div class ="introduction mt-2">
