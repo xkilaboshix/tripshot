@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   
   resources :users, only: [:show, :edit, :update] do
     resources :favorites, only: [:index]
+    resources :relationships, only: [:index]
   end
+  
   resources :posts do
     resources :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
@@ -24,6 +26,6 @@ Rails.application.routes.draw do
   resources :lists, except: [:index]
   resources :rooms, except: [:new, :edit, :update]
   resources :user_rooms, only: [:create]
-  resources :relationships, only: [:index, :create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 
 end
