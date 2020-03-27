@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :correct_user, except: [:new, :create, :index, :show]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   
   def new
     @post = Post.new
@@ -23,16 +24,13 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @post_comment = PostComment.new
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to post_path(@post)
     else
@@ -41,7 +39,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to list_path(@post.list_id)
   end
@@ -58,6 +55,10 @@ class PostsController < ApplicationController
     if current_user.id != post.user_id
       redirect_to user_path(current_user)
     end
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
   
     # 一週間のお気に入りランキングを計算
