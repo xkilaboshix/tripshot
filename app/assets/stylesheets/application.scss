@@ -165,19 +165,10 @@ p.top-introduction {
   height: 38px;
 }
 
-
 // マイページ背景画像とプロフィール画像(users#show)
 .profile li {
   position: relative;
   list-style: none;
-}
-
-.login-alert {
-  position: absolute;
-  top: 7%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 
 .profile p {
