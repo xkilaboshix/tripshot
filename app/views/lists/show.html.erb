@@ -13,7 +13,7 @@
                 <%= attachment_image_tag @list.user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg", size:'60x60' %>
               <% end %>
               <%= @list.title %>
-            <li class="list-group-item list-group-item-primary">
+            <li class="list-group-item list-group-item-primary nowrap">
               出発：<%= @list.departure_date %>　帰宅：<%= @list.return_date %>
             </li>
             </li>
