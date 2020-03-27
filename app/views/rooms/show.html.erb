@@ -21,4 +21,9 @@
       <% end %>
     </div>
   </div>
+  <% if flash[:alert] %>
+    <div class="alert alert-danger" style="margin-bottom:120px;">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
 </div>
