@@ -70,6 +70,11 @@ footer {
   justify-content: center;
 }
 
+// 改行禁止
+.nowrap {
+  white-space: nowrap;
+}
+
 // 投稿画像
 .post-image img {
   border-radius: 0.25rem;
