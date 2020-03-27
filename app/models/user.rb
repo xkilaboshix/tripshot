@@ -34,9 +34,10 @@ class User < ApplicationRecord
   def active_for_authentication?
     super && self.is_enabled?
   end
+
   # アカウントが退会済みの場合メッセージを出す
   def inactive_message
-    self.is_enabled? ? super : :special_condition_is_not_valid
+    self.is_enabled? ? super : :""
   end
 
   # フォロー機能メソッド
