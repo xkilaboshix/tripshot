@@ -4,8 +4,8 @@ class RelationshipsController < ApplicationController
 
   def index
     user = User.find(params[:user_id])
-    @followings = user.followings
-    @followers = user.followers
+    @followings = user.followings.where(id: active_user_id)
+    @followers = user.followers.where(id: active_user_id)
   end
 
   def create

@@ -61,12 +61,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
   
-  # 有効なユーザーのidを取得
-  def active_user_id
-    active_user_id = User.where(is_enabled: true).pluck(:id)
-    return active_user_id
-  end
-  
     # 一週間のお気に入りランキングを計算
   def week_post_calculate
 
