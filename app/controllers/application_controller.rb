@@ -6,4 +6,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:is_enabled, :name ])
   end
 
+  # 有効なユーザーのidを取得
+  def active_user_id
+    active_user_id = User.where(is_enabled: true).pluck(:id)
+    return active_user_id
+  end
+
 end

@@ -4,13 +4,13 @@ class SearchsController < ApplicationController
     if params[:search] == ""
       redirect_back(fallback_location: root_path)
     elsif params[:select] == "ユーザー"
-      @users = User.where(['name LIKE ?', "%#{params[:search]}%"])
+      @users = User.where(['name LIKE ?', "%#{params[:search]}%"]).where(id: active_user_id)
     elsif params[:select] == "リスト名"
-      @lists = List.where(['title LIKE ?', "%#{params[:search]}%"]).pluck(:id)
+      @lists = List.where(['title LIKE ?', "%#{params[:search]}%"]).where(user_id: active_user_id).pluck(:id)
       session[:list_id] = @lists
       redirect_to search_list_path
     elsif params[:select] == "リストのタグ"
-      @lists = List.tagged_with(params[:search], wild: true, any: true).pluck(:id)
+      @lists = List.where(user_id: active_user_id).tagged_with(params[:search], wild: true, any: true).pluck(:id)
       session[:list_id] = @lists
       redirect_to search_tag_path
     end
