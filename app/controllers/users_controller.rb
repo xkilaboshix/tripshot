@@ -3,7 +3,12 @@ before_action :correct_user, except: [:show]
 before_action :set_user
 
   def show
-    @lists = List.where(user_id: @user.id)
+    if @user.is_enabled == true
+      @lists = List.where(user_id: @user.id)
+    else
+      flash[:alert] = 'このユーザーは退会済みです。'
+      redirect_back(fallback_location: posts_path)
+    end
   end
 
   def edit

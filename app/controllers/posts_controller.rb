@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @second_rank = week_post_calculate[1]
     @third_rank = week_post_calculate[2]
 
-    @posts = Post.page(params[:page]).per(9).reverse_order
+    @posts = Post.where(user_id: active_user_id).page(params[:page]).per(9).reverse_order
     @favorite_ranks = week_post_calculate
   end
 
@@ -61,11 +61,18 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
   
+  # 有効なユーザーのidを取得
+  def active_user_id
+    active_user_id = User.where(is_enabled: true).pluck(:id)
+    return active_user_id
+  end
+  
     # 一週間のお気に入りランキングを計算
   def week_post_calculate
 
     # 一週間以内の投稿をとってくる
-    posts = Post.where("created_at > ?", 7.days.ago)
+    # active_user_id = User.where(is_enabled: true).pluck(:id)
+    posts = Post.where("created_at > ?", 7.days.ago).where(user_id: active_user_id)
     # お気に入りの多い順に並べてidをとる
     post_ids = Favorite.where(post_id: posts.pluck(:id)).group(:post_id).order('count(post_id) DESC').pluck(:post_id)
     post_ranks_ids = post_ids.first(3)
