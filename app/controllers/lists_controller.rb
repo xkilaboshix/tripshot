@@ -20,13 +20,9 @@ before_action :correct_user, only: [:edit, :update, :destroy]
 
   def show
     @list = List.find(params[:id])
-    if request.from_pc?
-      @posts = Post.where(list_id: params[:id]).page(params[:page]).reverse_order
-    else
-      @posts = Post.where(list_id: params[:id]).reverse_order
-    end
-    
+    @posts = Post.where(list_id: params[:id]).page(params[:page]).per(9).reverse_order
   end
+
   def edit
     @list = List.find(params[:id])
   end
