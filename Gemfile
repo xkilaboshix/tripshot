@@ -96,7 +96,7 @@ gem 'font-awesome-rails'
 gem 'rails-i18n', '~> 5.1'
 
 # ページネーション
-gem 'kaminari','~> 1.1.1'
+gem 'kaminari','~> 1.2.1'
 
 gem 'rack-user_agent'
 
